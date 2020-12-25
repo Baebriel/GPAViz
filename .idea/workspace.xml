@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Worked on parsing form data.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Successfully obtained average GPA for each given semester.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608918112314</updated>
-      <workItem from="1608918114032" duration="14812000" />
+      <workItem from="1608918114032" duration="16026000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -68,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608925452548</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Successfully obtained average GPA for each given semester.">
+      <created>1608937129347</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608937129347</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,7 +84,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Worked on parsing form data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked on parsing form data." />
+    <MESSAGE value="Successfully obtained average GPA for each given semester." />
+    <option name="LAST_COMMIT_MESSAGE" value="Successfully obtained average GPA for each given semester." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

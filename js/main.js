@@ -219,14 +219,14 @@ $( ".draw" ).click(function() {
   // compute semester average gpa
   // first, arrange unique semesters into object of semester objects -> object with avg gpa and cumulative
 
-  const semesters = {};
+  const semesters = [];
   for (i = 0; i < uniqueSemesters.length; i++) {
     const semesterObject = {}
-
+    semesterObject['semester'] = uniqueSemesters[i];
     semesterObject['GPAHours'] = sum(uniqueSemesters[i], 'hours');
     semesterObject['qualityPoints'] = sum(uniqueSemesters[i], 'qualityPoints');
-    semesterObject['GPA'] = semesterObject['qualityPoints'] / semesterObject['GPAHours'];
-    semesters[uniqueSemesters[i]] = semesterObject;
+    semesterObject['gpa'] = Math.floor(semesterObject['qualityPoints'] / semesterObject['GPAHours'] * 100) / 100; //round down to 2 decimal places
+    semesters.push(semesterObject);
   }
 
   console.log(semesters);
@@ -249,5 +249,32 @@ $( ".draw" ).click(function() {
 
    */
 
+  update(semesters);
+
 });
 
+// function to update chart (only bar for now)
+function update(data) {
+  // Update the X axis
+  xScale.domain(data.map(function(d) { return d.semester; }))
+  xScale.call(d3.axisBottom(xScale))
+
+  const bars = svg.selectAll("rect")
+      .data(data);
+
+  bars
+      .enter()
+      .append("rect") // Add a new rect for each new elements
+      .attr('class', 'bar')
+      .merge(u) // get the already existing elements as well
+      .transition() // and apply changes to all of them
+      .duration(1000)
+      .attr('x', (d) => xScale(d.semester))
+      .attr('y', (d) => yScale(d.gpa))
+      .attr('width', xScale.bandwidth())
+      .attr('height', (d) => height - yScale(d.gpa))
+
+  bars
+      .exit()
+      .remove()
+}
