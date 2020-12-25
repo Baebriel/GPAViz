@@ -73,11 +73,11 @@ chart.selectAll()
   .data(data)
   .enter()
   .append('rect')
+  .attr('class', 'bar')
   .attr('x', (d) => xScale(d.semester))
   .attr('y', (d) => yScale(d.gpa))
   .attr('height', (d) => height - yScale(d.gpa))
   .attr('width', xScale.bandwidth())
-  .attr('')
 
 svg
   .append('text')
@@ -140,8 +140,6 @@ $( ".draw" ).click(function() {
     newData.push(newObject);
   }
 
-  console.log(newData);
-
   // convert grade to GPA and add to object
   const gradeToPoints = {
     'A+': 4,
@@ -160,21 +158,96 @@ $( ".draw" ).click(function() {
   };
 
   for (let i = 0; i < newData.length; i++) {
+    // convert grade to grade points
     newData[i]['gpa'] = gradeToPoints[newData[i]['grade']];
+    // calculate quality points
+    newData[i]['qualityPoints'] = newData[i]['gpa'] * newData[i]['hours'];
   }
 
   console.log(newData);
 
-  // split data into semesters
   // get unique semesters
-  var flags = [], semesters = [], l = newData.length, i;
+  var flags = [], uniqueSemesters = [], l = newData.length, i;
   for( i=0; i<l; i++) {
     if( flags[newData[i].semester]) continue;
     flags[newData[i].semester] = true;
-    semesters.push(newData[i].semester);
+    uniqueSemesters.push(newData[i].semester);
+  }
+  console.log('unique semesters: ');
+  console.log(uniqueSemesters);
+
+  // group courses by semester
+  const groupBy = key => array =>
+      array.reduce((objectsByKeyValue, obj) => {
+        const value = obj[key];
+        objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(obj);
+        return objectsByKeyValue;
+      }, {});
+
+  const groupBySemester = groupBy('semester');
+
+  const coursesBySemester = groupBySemester(newData);
+  console.log('courses by semester: ');
+  console.log(coursesBySemester);
+
+  // pretty print
+
+  console.log(
+      JSON.stringify({
+        coursesBySemester: groupBySemester(newData),
+      }, null, 2)
+  );
+
+
+  // get sum of credit hours or quality points
+  function sum( semester , argument) {
+    let sum = 0;
+    for (const key in coursesBySemester) {
+      if (key === semester) {
+        console.log(key);
+        // sum hours from each class in array
+        coursesBySemester[key].forEach(course => {
+          console.log(course);
+          console.log(course[argument]);
+          if (course['semester'] === semester) { sum += parseFloat(course[argument])}
+        });
+      }
+    }
+    return sum;
+  }
+
+  // compute semester average gpa
+  // first, arrange unique semesters into object of semester objects -> object with avg gpa and cumulative
+
+  const semesters = {};
+  for (i = 0; i < uniqueSemesters.length; i++) {
+    const semesterObject = {}
+
+    semesterObject['GPAHours'] = sum(uniqueSemesters[i], 'hours');
+    semesterObject['qualityPoints'] = sum(uniqueSemesters[i], 'qualityPoints');
+    semesterObject['GPA'] = semesterObject['qualityPoints'] / semesterObject['GPAHours'];
+    semesters[uniqueSemesters[i]] = semesterObject;
   }
 
   console.log(semesters);
+
+
+   // format example
+  /*
+  const semesters = {
+    'FA17': {
+      'GPAHours' : 16,
+      'qualityPoints': 35,
+      'averageGPA': 2.18 // round down to nearest hundredth
+    },
+    'SP18': {
+      'GPAHours' : 16,
+      'qualityPoints': 35,
+      'averageGPA': 2.18
+    }
+  }
+
+   */
 
 });
 

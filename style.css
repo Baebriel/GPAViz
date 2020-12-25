@@ -31,5 +31,9 @@ div#layout {
   input {
     width: 10%;
   }
+
+  .bar {
+    fill: grey;
+  }
   
   
