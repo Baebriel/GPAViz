@@ -104,3 +104,77 @@ chart.append("path")
   .data(data)
   .attr("class", "line")
   .attr("d", line(data))
+
+// add course
+$(".add").click(function() {
+  $("form > p:first-child").clone(true).insertBefore("form > p:last-child");
+  return false;
+});
+
+// remove course
+$(".remove").click(function() {
+  var count = document.getElementById("myForm").childElementCount;
+  if (count > 2) {
+    $(this).parent().remove();
+  } else {
+    alert('Cannot have less than one course.')
+  }
+});
+
+// save form and draw chart
+$( ".draw" ).click(function() {
+
+  // parse form data into JS object of same structure as data object
+  const formData = $( '#myForm' ).serializeArray();
+  const numFields = 4;
+  const newData = [];
+
+  for (let i = 0; i < formData.length - 3; i+=numFields) {
+    const newObject = {};
+
+    newObject[formData[i]['name']] = formData[i]['value'];
+    newObject[formData[i + 1]['name']] = formData[i + 1]['value'];
+    newObject[formData[i + 2]['name']] = formData[i + 2]['value'];
+    newObject[formData[i + 3]['name']] = formData[i + 3]['value'];
+
+    newData.push(newObject);
+  }
+
+  console.log(newData);
+
+  // convert grade to GPA and add to object
+  const gradeToPoints = {
+    'A+': 4,
+    'A': 4,
+    'A-': 3.67,
+    'B+': 3.33,
+    'B': 3,
+    'B-': 2.67,
+    'C+': 2.33,
+    'C': 2,
+    'C-': 1.67,
+    'D+': 1.33,
+    'D': 1,
+    'D-': 0.67,
+    'F': 0
+  };
+
+  for (let i = 0; i < newData.length; i++) {
+    newData[i]['gpa'] = gradeToPoints[newData[i]['grade']];
+  }
+
+  console.log(newData);
+
+  // split data into semesters
+  // get unique semesters
+  var flags = [], semesters = [], l = newData.length, i;
+  for( i=0; i<l; i++) {
+    if( flags[newData[i].semester]) continue;
+    flags[newData[i].semester] = true;
+    semesters.push(newData[i].semester);
+  }
+
+  console.log(semesters);
+
+});
+
