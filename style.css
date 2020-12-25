@@ -1,0 +1,35 @@
+div#layout {
+    width: 1366px;
+    height: 768px;
+    background: #d0d6d1;
+  }
+  
+  div#container {
+    width: 1000px;
+    height: 600px;
+    margin: auto;
+    background: #e3e6cf;
+  }
+  
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* line attributes */
+  .line {
+    stroke: red;
+    fill: none;
+    stroke-width: 3;
+  }
+  
+  div#courseDiv {
+    text-align: left;
+    background: white;
+  }
+  
+  input {
+    width: 10%;
+  }
+  
+  
