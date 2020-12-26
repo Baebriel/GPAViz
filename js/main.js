@@ -266,7 +266,7 @@ function update(data) {
       .enter()
       .append("rect") // Add a new rect for each new elements
       .attr('class', 'bar')
-      .merge(u) // get the already existing elements as well
+      .merge(bars) // get the already existing elements as well
       .transition() // and apply changes to all of them
       .duration(1000)
       .attr('x', (d) => xScale(d.semester))
@@ -278,4 +278,3 @@ function update(data) {
       .exit()
       .remove()
 }
-
