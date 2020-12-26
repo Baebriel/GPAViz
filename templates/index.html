@@ -13,15 +13,18 @@
 
   <body>
   <header>
-    Header
+    <h1 class="title">UIUC GPA Viz</h1>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
   </header>
+
+  <!-- line break after nav bar -->
+  <br style="clear:both" />
 
   <main>
     <div id='layout'>
@@ -45,7 +48,7 @@
               <option value="SU20">Summer 2020</option>
               <option value="FA20">Fall 2020</option>
             </select>
-            <label>Course:</label> <input type="text" name='course'>
+            <label>Course:</label> <input type="text" name="course" id="input">
             <label>Hours:</label> <select name="hours" id='hours'>
               <option value="1">1</option>
               <option value="2">2</option>

@@ -107,15 +107,17 @@ chart.append("path")
 
 // add course
 $(".add").click(function() {
-  $("form > p:first-child").clone(true).insertBefore("form > p:last-child");
+  const clone = $("form > p:first-child").clone(true);
+  clone.find('input').val('');
+  clone.insertBefore("form > p:last-child");
   return false;
 });
 
 // remove course
 $(".remove").click(function() {
-  var count = document.getElementById("myForm").childElementCount;
+  const count = document.getElementById("myForm").childElementCount;
   if (count > 2) {
-    $(this).parent().remove();
+    $(this).parent().fadeOut(250, function () {$(this).remove()});
   } else {
     alert('Cannot have less than one course.')
   }
