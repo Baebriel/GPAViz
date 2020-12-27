@@ -65,15 +65,17 @@ const yScale = d3.scaleLinear()
     .domain([0, 4]);
 
 // add axes
+const yAxis = d3.axisLeft(yScale)
+
 const gy = chart.append('g')
-    .call(d3.axisLeft(yScale));
+    .call(yAxis)
 
 const xAxis = d3.axisBottom(xScale)
 
 const gx = chart.append('g')
     .attr('transform', `translate(0, ${height})`)
     .attr('class', 'x_axis')
-    .call(d3.axisBottom(xScale));
+    .call(xAxis);
 
 // create and add bars
 chart.selectAll()
@@ -256,7 +258,6 @@ $( ".draw" ).click(function() {
    */
 
   update(semesters);
-  console.log(semesters);
 
   // semester sort order
   const sortOrder = [
@@ -279,18 +280,34 @@ $( ".draw" ).click(function() {
 
 // function to update chart (only bar for now)
 function update(data) {
+
+  const transitionTime = 500;
+
   console.log('updating chart');
 
   // remove X axis
-  chart.select('.x_axis').remove()
+  console.log('before update:')
+  console.log(chart.select('.x_axis')._groups[0][0].textContent);
 
-  // update x axis for real this time
+  // remove x axis
+  chart.selectAll('.x_axis').remove()
+
+  // update x scale
   xScale
       .domain(data.map((d) => d.semester))
 
+  // add x axis
   chart.append('g')
       .attr('transform', `translate(0, ${height})`)
+      .attr('class', 'x_axis')
+      /*
+      .transition()
+      .duration(transitionTime)
+
+       */
       .call(xAxis);
+
+
 
   const bars = svg.selectAll("rect")
       .data(data);
@@ -301,8 +318,8 @@ function update(data) {
       .attr('class', 'bar')
       .merge(bars) // get the already existing elements as well
       .transition() // and apply changes to all of them
-      .duration(1000)
-      .attr('x', (d) => xScale(d.semester))
+      .duration(transitionTime)
+      .attr('x', (d) => xScale(d.semester)) // change from xScale to xAxis
       .attr('y', (d) => yScale(d.gpa))
       .attr('width', xScale.bandwidth())
       .attr('height', (d) => height - yScale(d.gpa))
@@ -310,4 +327,10 @@ function update(data) {
   bars
       .exit()
       .remove()
+
+  // timeout function to print axis text content after update transition is complete
+  setTimeout(function(){
+    console.log('after update:')
+    console.log(chart.select('.x_axis')._groups[0][0].textContent);
+  },transitionTime);
 }
