@@ -176,8 +176,6 @@ $( ".draw" ).click(function() {
     newData[i]['qualityPoints'] = newData[i]['gpa'] * newData[i]['hours'];
   }
 
-  console.log(newData);
-
   // get unique semesters
   var flags = [], uniqueSemesters = [], l = newData.length, i;
   for( i=0; i<l; i++) {
@@ -185,8 +183,6 @@ $( ".draw" ).click(function() {
     flags[newData[i].semester] = true;
     uniqueSemesters.push(newData[i].semester);
   }
-  console.log('unique semesters: ');
-  console.log(uniqueSemesters);
 
   // group courses by semester
   const groupBy = key => array =>
@@ -199,16 +195,15 @@ $( ".draw" ).click(function() {
   const groupBySemester = groupBy('semester');
 
   const coursesBySemester = groupBySemester(newData);
-  console.log('courses by semester: ');
-  console.log(coursesBySemester);
 
   // pretty print
-
+/*
   console.log(
       JSON.stringify({
         coursesBySemester: groupBySemester(newData),
       }, null, 2)
   );
+ */
 
 
   // get sum of credit hours or quality points
@@ -216,11 +211,8 @@ $( ".draw" ).click(function() {
     let sum = 0;
     for (const key in coursesBySemester) {
       if (key === semester) {
-        console.log(key);
         // sum hours from each class in array
         coursesBySemester[key].forEach(course => {
-          console.log(course);
-          console.log(course[argument]);
           if (course['semester'] === semester) { sum += parseFloat(course[argument])}
         });
       }
@@ -241,7 +233,6 @@ $( ".draw" ).click(function() {
     semesters.push(semesterObject);
   }
 
-  console.log(semesters);
 
 
    // format example
@@ -284,9 +275,19 @@ $( ".draw" ).click(function() {
 
 // function to update chart (only bar for now)
 function update(data) {
+  const svg = d3.select('#chart');
+
+  const chart = svg.append('g').attr('transform', `translate(${margin}, ${margin})`);
+
   // Update the X axis
-  xScale.domain(data.map(function(d) { return d.semester; }))
-  xScale.call(d3.axisBottom(xScale))
+  const xScale = d3.scaleBand()
+      .range([0, width])
+      .domain(data.map((d) => d.semester))
+      .padding(0.2)
+
+  chart.append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(d3.axisBottom(xScale));
 
   const bars = svg.selectAll("rect")
       .data(data);
