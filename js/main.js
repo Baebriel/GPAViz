@@ -257,7 +257,8 @@ $( ".draw" ).click(function() {
 
    */
 
-  update(semesters);
+
+  console.log(semesters);
 
   // semester sort order
   const sortOrder = [
@@ -276,6 +277,53 @@ $( ".draw" ).click(function() {
     "FA20"
   ]
 
+  // function to sort semesters
+  // credit: https://gist.github.com/ecarter/1423674
+  function mapOrder (array, order, key) {
+
+    array.sort( function (a, b) {
+      const A = a[key], B = b[key];
+
+      if (order.indexOf(A) > order.indexOf(B)) {
+        return 1;
+      } else {
+        return -1;
+      }
+
+    });
+
+    return array;
+  }
+
+  // sort semesters
+  const semesters_ordered = mapOrder(semesters, sortOrder, 'semester');
+
+  // cumulative gpa of first semester is same as semester gpa
+  semesters_ordered[0]['cumGPA'] = semesters_ordered[0]['gpa'];
+  // get cumulative gpa
+  for (i = 1; i < semesters_ordered.length; i++) {
+    let sumHrs = 0;
+    let sumPts = 0;
+
+    for (j = 0; j <= i; j++) {
+      sumHrs += semesters_ordered[j]['GPAHours'];
+      sumPts += semesters_ordered[j]['qualityPoints'];
+    }
+
+    console.log('sum hours: ' + sumHrs);
+    console.log('sum points: ' + sumPts);
+
+    // get cumulative gpa and round down to hundredth
+    semesters_ordered[i]['cumGPA'] = Math.floor(sumPts / sumHrs * 100) / 100;
+  }
+
+  //TODO: figure out why cumulative gpa is not accurate
+  // i think its ok now
+
+  console.log(semesters_ordered);
+
+  // update chart
+  update(semesters_ordered);
 });
 
 // function to update chart (only bar for now)
@@ -312,6 +360,8 @@ function update(data) {
   const bars = svg.selectAll("rect")
       .data(data);
 
+  //TODO: figure out why some bars are too high. the new lines are also too high.
+
   bars
       .enter()
       .append("rect") // Add a new rect for each new elements
@@ -327,6 +377,25 @@ function update(data) {
   bars
       .exit()
       .remove()
+
+  // update line
+  const u = svg.selectAll(".lineTest")
+      .data([data], (d) => d.semester);
+
+  //TODO: either remove line and create new, or move line to new position
+
+// add line to chart
+  u
+      .enter()
+      .append("path")
+      .attr("class","line")
+      .merge(u)
+      .transition()
+      .duration(transitionTime)
+      .attr("d", line
+          .x((d) => xScale(d.semester) + xScale.bandwidth() / 2)
+          .y((d) => yScale(d.cumGPA)))
+
 
   // timeout function to print axis text content after update transition is complete
   setTimeout(function(){

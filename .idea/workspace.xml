@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Half implemented changing x axis; only changes on first redraw.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Implemented changing x axis text content.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
@@ -12,9 +12,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="9bc0a15c-272b-43fe-b5ce-33660d9b4ef3" />
   </component>
   <component name="ProjectId" id="1m9uQLTXrzmsUwDZwcgBBjjYEGN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -67,7 +64,7 @@
       <updated>1608918112314</updated>
       <workItem from="1608918114032" duration="16591000" />
       <workItem from="1608974281948" duration="85000" />
-      <workItem from="1608997177780" duration="18729000" />
+      <workItem from="1608997177780" duration="21774000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -132,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609108546361</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Implemented changing x axis text content.">
+      <created>1609109948449</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1609109948449</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +177,8 @@
     <MESSAGE value="Added Bootstrap nav bar." />
     <MESSAGE value="Formatted chart creation and update code." />
     <MESSAGE value="Half implemented changing x axis; only changes on first redraw." />
-    <option name="LAST_COMMIT_MESSAGE" value="Half implemented changing x axis; only changes on first redraw." />
+    <MESSAGE value="Implemented changing x axis text content." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented changing x axis text content." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
