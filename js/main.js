@@ -45,6 +45,7 @@ const data = [{
   },
 ];
 
+// ================ BEGIN CHART CREATION ========================
 const svg = d3.select('#chart');
 
 const margin = 60;
@@ -53,22 +54,25 @@ const height = 600 - 2 * margin;
 
 const chart = svg.append('g').attr('transform', `translate(${margin}, ${margin})`);
 
+// define x and y scales
+const xScale = d3.scaleBand()
+    .range([0, width])
+    .domain(data.map((d) => d.semester))
+    .padding(0.2)
+
 const yScale = d3.scaleLinear()
   .range([height, 0])
   .domain([0, 4]);
 
+// add axes
 chart.append('g')
   .call(d3.axisLeft(yScale));
-
-const xScale = d3.scaleBand()
-  .range([0, width])
-  .domain(data.map((d) => d.semester))
-  .padding(0.2)
 
 chart.append('g')
   .attr('transform', `translate(0, ${height})`)
   .call(d3.axisBottom(xScale));
 
+// create and add bars
 chart.selectAll()
   .data(data)
   .enter()
@@ -79,6 +83,7 @@ chart.selectAll()
   .attr('height', (d) => height - yScale(d.gpa))
   .attr('width', xScale.bandwidth())
 
+// add y axis label
 svg
   .append('text')
   .attr('class', 'label')
@@ -88,6 +93,7 @@ svg
   .attr('text-anchor', 'middle')
   .text('GPA')
 
+// add x axis label
 svg
   .append('text')
   .attr('class', 'label')
@@ -96,14 +102,18 @@ svg
   .attr('text-anchor', 'middle')
   .text('Semester')
 
-var line = d3.line()
+// define line
+const line = d3.line()
   .x((d) => xScale(d.semester) + xScale.bandwidth() / 2)
   .y((d) => yScale(d.cumulative))
 
+// add line to chart
 chart.append("path")
   .data(data)
   .attr("class", "line")
   .attr("d", line(data))
+
+// ================ END CHART CREATION ========================
 
 // add course
 $(".add").click(function() {
@@ -252,6 +262,23 @@ $( ".draw" ).click(function() {
    */
 
   update(semesters);
+
+  // semester sort order
+  const sortOrder = [
+    "FA17",
+    "WI18",
+    "SP18",
+    "SU18",
+    "FA18",
+    "WI19",
+    "SP19",
+    "SU19",
+    "FA19",
+    "WI20",
+    "SP20",
+    "SU20",
+    "FA20"
+  ]
 
 });
 

@@ -36,23 +36,30 @@ input {
   fill: grey;
 }
 
+/*
 header {
   background-color: antiquewhite;
   width: 100%;
 }
 
+ */
+
 footer {
   background-color: antiquewhite;
 }
 
+/*
 nav {
   float: right;
-  vertical-align: center;
+
 }
+
+
 
 .title {
   background-color: aquamarine;
-  vertical-align: center;
+  horiz-align: left;
+  vertical-align: bottom;
 }
 
 ul {
@@ -72,6 +79,8 @@ a {
   background-color: #dddddd;
 }
 
+ */
+
 .active {
   background-color: #4CAF50;
 }
@@ -80,8 +89,10 @@ a {
   margin-left: 10px;
 }
 
-
+/*
 .title, nav {
   display: inline-block;
 }
+
+ */
 
