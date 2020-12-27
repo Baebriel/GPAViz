@@ -1,8 +1,8 @@
-const data = [{
-    semester: 'FA17',
-    gpa: '3.19',
-    cumulative: '3.19'
-  },
+const sample = [{
+  semester: 'FA17',
+  gpa: '3.19',
+  cumulative: '3.19'
+},
   {
     semester: 'SP18',
     gpa: '3.17',
@@ -57,61 +57,64 @@ const chart = svg.append('g').attr('transform', `translate(${margin}, ${margin})
 // define x and y scales
 const xScale = d3.scaleBand()
     .range([0, width])
-    .domain(data.map((d) => d.semester))
+    .domain(sample.map((d) => d.semester))
     .padding(0.2)
 
 const yScale = d3.scaleLinear()
-  .range([height, 0])
-  .domain([0, 4]);
+    .range([height, 0])
+    .domain([0, 4]);
 
 // add axes
-chart.append('g')
-  .call(d3.axisLeft(yScale));
+const gy = chart.append('g')
+    .call(d3.axisLeft(yScale));
 
-chart.append('g')
-  .attr('transform', `translate(0, ${height})`)
-  .call(d3.axisBottom(xScale));
+const xAxis = d3.axisBottom(xScale)
+
+const gx = chart.append('g')
+    .attr('transform', `translate(0, ${height})`)
+    .attr('class', 'x_axis')
+    .call(d3.axisBottom(xScale));
 
 // create and add bars
 chart.selectAll()
-  .data(data)
-  .enter()
-  .append('rect')
-  .attr('class', 'bar')
-  .attr('x', (d) => xScale(d.semester))
-  .attr('y', (d) => yScale(d.gpa))
-  .attr('height', (d) => height - yScale(d.gpa))
-  .attr('width', xScale.bandwidth())
+    .data(sample)
+    .enter()
+    .append('rect')
+    .attr('class', 'bar')
+    .attr('x', (d) => xScale(d.semester))
+    .attr('y', (d) => yScale(d.gpa))
+    .attr('height', (d) => height - yScale(d.gpa))
+    .attr('width', xScale.bandwidth())
 
 // add y axis label
 svg
-  .append('text')
-  .attr('class', 'label')
-  .attr('x', -(height / 2) - margin)
-  .attr('y', margin / 2.4)
-  .attr('transform', 'rotate(-90)')
-  .attr('text-anchor', 'middle')
-  .text('GPA')
+    .append('text')
+    .attr('class', 'label')
+    .attr('x', -(height / 2) - margin)
+    .attr('y', margin / 2.4)
+    .attr('transform', 'rotate(-90)')
+    .attr('text-anchor', 'middle')
+    .text('GPA')
 
 // add x axis label
 svg
-  .append('text')
-  .attr('class', 'label')
-  .attr('x', width / 2 + margin)
-  .attr('y', height + margin * 1.7)
-  .attr('text-anchor', 'middle')
-  .text('Semester')
+    .append('text')
+    .attr('class', 'label')
+    .attr('x', width / 2 + margin)
+    .attr('y', height + margin * 1.7)
+    .attr('text-anchor', 'middle')
+    .text('Semester')
 
 // define line
 const line = d3.line()
-  .x((d) => xScale(d.semester) + xScale.bandwidth() / 2)
-  .y((d) => yScale(d.cumulative))
+    .x((d) => xScale(d.semester) + xScale.bandwidth() / 2)
+    .y((d) => yScale(d.cumulative))
 
 // add line to chart
 chart.append("path")
-  .data(data)
-  .attr("class", "line")
-  .attr("d", line(data))
+    .data(sample)
+    .attr("class", "line")
+    .attr("d", line(sample))
 
 // ================ END CHART CREATION ========================
 
@@ -197,13 +200,13 @@ $( ".draw" ).click(function() {
   const coursesBySemester = groupBySemester(newData);
 
   // pretty print
-/*
-  console.log(
-      JSON.stringify({
-        coursesBySemester: groupBySemester(newData),
-      }, null, 2)
-  );
- */
+  /*
+    console.log(
+        JSON.stringify({
+          coursesBySemester: groupBySemester(newData),
+        }, null, 2)
+    );
+   */
 
 
   // get sum of credit hours or quality points
@@ -235,7 +238,7 @@ $( ".draw" ).click(function() {
 
 
 
-   // format example
+  // format example
   /*
   const semesters = {
     'FA17': {
@@ -253,6 +256,7 @@ $( ".draw" ).click(function() {
    */
 
   update(semesters);
+  console.log(semesters);
 
   // semester sort order
   const sortOrder = [
@@ -275,19 +279,18 @@ $( ".draw" ).click(function() {
 
 // function to update chart (only bar for now)
 function update(data) {
-  const svg = d3.select('#chart');
+  console.log('updating chart');
 
-  const chart = svg.append('g').attr('transform', `translate(${margin}, ${margin})`);
+  // remove X axis
+  chart.select('.x_axis').remove()
 
-  // Update the X axis
-  const xScale = d3.scaleBand()
-      .range([0, width])
+  // update x axis for real this time
+  xScale
       .domain(data.map((d) => d.semester))
-      .padding(0.2)
 
   chart.append('g')
       .attr('transform', `translate(0, ${height})`)
-      .call(d3.axisBottom(xScale));
+      .call(xAxis);
 
   const bars = svg.selectAll("rect")
       .data(data);

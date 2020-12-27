@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added Bootstrap nav bar.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Formatted chart creation and update code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
@@ -67,7 +67,7 @@
       <updated>1608918112314</updated>
       <workItem from="1608918114032" duration="16591000" />
       <workItem from="1608974281948" duration="85000" />
-      <workItem from="1608997177780" duration="13010000" />
+      <workItem from="1608997177780" duration="17314000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -118,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609088969904</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Formatted chart creation and update code.">
+      <created>1609089442231</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1609089442231</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +164,8 @@
     <MESSAGE value="Removed input text upon 'add' and added fadeout on 'remove'." />
     <MESSAGE value="Formatted code." />
     <MESSAGE value="Added Bootstrap nav bar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Bootstrap nav bar." />
+    <MESSAGE value="Formatted chart creation and update code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatted chart creation and update code." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
