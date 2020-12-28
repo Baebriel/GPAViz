@@ -356,8 +356,7 @@ function update(data) {
 
   // update line
   const u = chart.selectAll(".line")
-
-  //TODO: either remove line and create new, or move line to new position
+      .raise()
 
 // add line to chart
   u
