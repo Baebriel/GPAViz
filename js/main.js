@@ -141,7 +141,7 @@ $(".remove").on("click",function() {
 });
 
 // save form and draw chart
-$( ".draw" ).click(function() {
+$( ".draw" ).on("click",function() {
 
   // parse form data into JS object of same structure as data object
   const formData = $( '#myForm' ).serializeArray();
