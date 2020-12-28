@@ -278,7 +278,7 @@ $( ".draw" ).click(function() {
   const semesters_ordered = mapOrder(semesters, sortOrder, 'semester');
 
   // cumulative gpa of first semester is same as semester gpa
-  semesters_ordered[0]['cumGPA'] = semesters_ordered[0]['gpa'];
+  semesters_ordered[0]['cumulative'] = semesters_ordered[0]['gpa'];
   // get cumulative gpa for rest of semesters
   for (i = 1; i < semesters_ordered.length; i++) {
     let sumHrs = 0;
@@ -290,11 +290,10 @@ $( ".draw" ).click(function() {
     }
 
     // get cumulative gpa and round down to hundredth
-    semesters_ordered[i]['cumGPA'] = Math.floor(sumPts / sumHrs * 100) / 100;
+    semesters_ordered[i]['cumulative'] = Math.floor(sumPts / sumHrs * 100) / 100;
   }
 
-  //TODO: figure out why cumulative gpa is not accurate
-  // i think its ok now
+  //TODO: double check cumulative gpa calculation works as intended
 
   console.log(semesters_ordered);
 
@@ -356,23 +355,22 @@ function update(data) {
       .remove()
 
   // update line
-  const u = svg.selectAll("line")
-      .data([data], (d) => d.semester);
+  const u = chart.selectAll(".line")
 
   //TODO: either remove line and create new, or move line to new position
 
 // add line to chart
   u
       .enter()
+      .data(data)
       .append("path")
       .attr("class","line")
       .merge(u)
       .transition()
       .duration(transitionTime)
-      .attr("d", line
-          .x((d) => xScale(d.semester) + xScale.bandwidth() / 2)
-          .y((d) => yScale(d.cumGPA)))
-
+      .attr("d", line(data))
+      .exit()
+      .remove()
 
   /*
   // timeout function to print axis text content after update transition is complete
@@ -382,3 +380,5 @@ function update(data) {
   },transitionTime);
    */
 }
+
+//TODO: use OCR from DARS report 'summary of courses taken' instead of manual input
