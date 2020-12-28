@@ -67,7 +67,7 @@ const yScale = d3.scaleLinear()
 // add axes
 const yAxis = d3.axisLeft(yScale)
 
-const gy = chart.append('g')
+chart.append('g')
     .call(yAxis)
 
 const xAxis = d3.axisBottom(xScale)
@@ -87,6 +87,7 @@ chart.selectAll()
     .attr('y', (d) => yScale(d.gpa))
     .attr('height', (d) => height - yScale(d.gpa))
     .attr('width', xScale.bandwidth())
+    .call(param => console.log('creating initial bars'));
 
 // add y axis label
 svg
@@ -182,7 +183,7 @@ $( ".draw" ).click(function() {
   }
 
   // get unique semesters
-  var flags = [], uniqueSemesters = [], l = newData.length, i;
+  let flags = [], uniqueSemesters = [], l = newData.length, i;
   for( i=0; i<l; i++) {
     if( flags[newData[i].semester]) continue;
     flags[newData[i].semester] = true;
@@ -215,7 +216,7 @@ $( ".draw" ).click(function() {
   function sum( semester , argument) {
     let sum = 0;
     for (const key in coursesBySemester) {
-      if (key === semester) {
+      if (key === semester && coursesBySemester.hasOwnProperty(key)) {
         // sum hours from each class in array
         coursesBySemester[key].forEach(course => {
           if (course['semester'] === semester) { sum += parseFloat(course[argument])}
@@ -238,28 +239,6 @@ $( ".draw" ).click(function() {
     semesters.push(semesterObject);
   }
 
-
-
-  // format example
-  /*
-  const semesters = {
-    'FA17': {
-      'GPAHours' : 16,
-      'qualityPoints': 35,
-      'averageGPA': 2.18 // round down to nearest hundredth
-    },
-    'SP18': {
-      'GPAHours' : 16,
-      'qualityPoints': 35,
-      'averageGPA': 2.18
-    }
-  }
-
-   */
-
-
-  console.log(semesters);
-
   // semester sort order
   const sortOrder = [
     "FA17",
@@ -277,7 +256,7 @@ $( ".draw" ).click(function() {
     "FA20"
   ]
 
-  // function to sort semesters
+  // function to sort semesters in in custom order
   // credit: https://gist.github.com/ecarter/1423674
   function mapOrder (array, order, key) {
 
@@ -295,23 +274,20 @@ $( ".draw" ).click(function() {
     return array;
   }
 
-  // sort semesters
+  // get sorted semesters
   const semesters_ordered = mapOrder(semesters, sortOrder, 'semester');
 
   // cumulative gpa of first semester is same as semester gpa
   semesters_ordered[0]['cumGPA'] = semesters_ordered[0]['gpa'];
-  // get cumulative gpa
+  // get cumulative gpa for rest of semesters
   for (i = 1; i < semesters_ordered.length; i++) {
     let sumHrs = 0;
     let sumPts = 0;
 
-    for (j = 0; j <= i; j++) {
+    for (let j = 0; j <= i; j++) {
       sumHrs += semesters_ordered[j]['GPAHours'];
       sumPts += semesters_ordered[j]['qualityPoints'];
     }
-
-    console.log('sum hours: ' + sumHrs);
-    console.log('sum points: ' + sumPts);
 
     // get cumulative gpa and round down to hundredth
     semesters_ordered[i]['cumGPA'] = Math.floor(sumPts / sumHrs * 100) / 100;
@@ -334,8 +310,10 @@ function update(data) {
   console.log('updating chart');
 
   // remove X axis
+  /*
   console.log('before update:')
   console.log(chart.select('.x_axis')._groups[0][0].textContent);
+   */
 
   // remove x axis
   chart.selectAll('.x_axis').remove()
@@ -357,10 +335,8 @@ function update(data) {
 
 
 
-  const bars = svg.selectAll("rect")
+  const bars = chart.selectAll("rect")
       .data(data);
-
-  //TODO: figure out why some bars are too high. the new lines are also too high.
 
   bars
       .enter()
@@ -373,13 +349,14 @@ function update(data) {
       .attr('y', (d) => yScale(d.gpa))
       .attr('width', xScale.bandwidth())
       .attr('height', (d) => height - yScale(d.gpa))
+      .call( param => console.log('adding bars'))
 
   bars
       .exit()
       .remove()
 
   // update line
-  const u = svg.selectAll(".lineTest")
+  const u = svg.selectAll("line")
       .data([data], (d) => d.semester);
 
   //TODO: either remove line and create new, or move line to new position
@@ -397,9 +374,11 @@ function update(data) {
           .y((d) => yScale(d.cumGPA)))
 
 
+  /*
   // timeout function to print axis text content after update transition is complete
   setTimeout(function(){
     console.log('after update:')
     console.log(chart.select('.x_axis')._groups[0][0].textContent);
   },transitionTime);
+   */
 }
