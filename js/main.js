@@ -122,7 +122,7 @@ chart.append("path")
 // ================ END CHART CREATION ========================
 
 // add course
-$(".add").click(function() {
+$(".add").on("click", function() {
   const clone = $("form > p:first-child").clone(true);
   clone.find('input').val('');
   clone.insertBefore("form > p:last-child");
@@ -130,10 +130,11 @@ $(".add").click(function() {
 });
 
 // remove course
-$(".remove").click(function() {
+//TODO: add button to clear all course (except first course for add()/clone() to work)
+$(".remove").on("click",function() {
   const count = document.getElementById("myForm").childElementCount;
   if (count > 2) {
-    $(this).parent().fadeOut(250, function () {$(this).remove()});
+    $(this).parent().fadeOut(200, function() {$(this).remove()});
   } else {
     alert('Cannot have less than one course.')
   }
@@ -293,7 +294,7 @@ $( ".draw" ).click(function() {
     semesters_ordered[i]['cumulative'] = Math.floor(sumPts / sumHrs * 100) / 100;
   }
 
-  //TODO: double check cumulative gpa calculation works as intended
+  //TODO: write tests to make sure cumulative gpa calculation is correct
 
   console.log(semesters_ordered);
 

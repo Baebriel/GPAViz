@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Fixed line transition.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Fixed line appearing behind bars.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
@@ -69,7 +69,7 @@
       <workItem from="1608974281948" duration="85000" />
       <workItem from="1608997177780" duration="22827000" />
       <workItem from="1609148576618" duration="623000" />
-      <workItem from="1609175055992" duration="4518000" />
+      <workItem from="1609175055992" duration="5072000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -162,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609196155218</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed line appearing behind bars.">
+      <created>1609196298396</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1609196298396</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +215,8 @@
     <MESSAGE value="Reformatted project structure." />
     <MESSAGE value="Fixed bars being added to wrong element and therefore being placed too high." />
     <MESSAGE value="Fixed line transition." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed line transition." />
+    <MESSAGE value="Fixed line appearing behind bars." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed line appearing behind bars." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
