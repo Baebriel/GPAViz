@@ -9,6 +9,7 @@ div#container {
   height: 600px;
   margin: auto;
   background: #e3e6cf;
+  float: left;
 }
 
 svg {
@@ -25,7 +26,8 @@ svg {
 
 div#courseDiv {
   text-align: left;
-  background: white;
+  background: rosybrown;
+  float: left;
 }
 
 input {
@@ -46,6 +48,7 @@ header {
 
 footer {
   background-color: antiquewhite;
+  float: bottom;
 }
 
 /*
@@ -96,3 +99,9 @@ a {
 
  */
 
+div#upload {
+  position: absolute;
+  left: 50%;
+  float: left;
+  background-color: #1b6d85;
+}

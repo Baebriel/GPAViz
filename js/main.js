@@ -257,7 +257,7 @@ $( ".draw" ).on("click",function() {
     "FA20"
   ]
 
-  // function to sort semesters in in custom order
+  // function to sort semesters in custom order
   // credit: https://gist.github.com/ecarter/1423674
   function mapOrder (array, order, key) {
 
@@ -369,6 +369,8 @@ function update(data) {
       .transition()
       .duration(transitionTime)
       .attr("d", line(data))
+
+  u
       .exit()
       .remove()
 
@@ -381,4 +383,57 @@ function update(data) {
    */
 }
 
+/*
+// filepond stuff
+const inputElement = document.querySelector('input[type="file"]');
+const pond = FilePond.create( inputElement );
+const file = pond.getFiles;
+
+ */
+
 //TODO: use OCR from DARS report 'summary of courses taken' instead of manual input
+//https://ourcodeworld.com/articles/read/580/how-to-convert-images-to-text-with-pure-javascript-using-tesseract-js
+
+// initialize tesseract in browser
+window.Tesseract = Tesseract.create({
+  // Path to worker
+  workerPath: 'http://localhost/js/worker.js',
+  // Path of folder where the language trained data is located
+  // note the "/" at the end, this string will be concatenated with the selected language
+  langPath: 'http://localhost/langs-folder/',
+  // Path to index script of the tesseract core ! https://github.com/naptha/tesseract.js-core
+  corePath: 'http://localhost/js/index.js',
+});
+
+// get file upon upload
+const inputFile = document.getElementById("file-input");
+inputFile.addEventListener("change", handleFiles, false);
+let file = [];
+
+function handleFiles() {
+  const fileList = this.files; /* now you can work with the file list */
+  file = fileList[0];
+  console.log('file size: ' + file.size + ' bytes');
+}
+
+// img to text upon button click
+document.getElementById("img-to-txt").addEventListener("click", function(){
+  let btn = this;
+
+  // Disable button until the text recognition finishes
+  btn.disable = true;
+
+  // Convert an image to text. This task works asynchronously, so you may show
+  // your user a loading dialog or something like that, or show the progress with Tesseract
+  Tesseract.recognize(file).then(function(result){
+    // The result object of a text recognition contains detailed data about all the text
+    // recognized in the image, words are grouped by arrays etc
+    console.log(result);
+
+    // Show recognized text in the browser !
+    alert(result.text);
+  }).finally(function(){
+    // Enable button once the text recognition finishes (either if fails or not)
+    btn.disable = false;
+  });
+}, false);
