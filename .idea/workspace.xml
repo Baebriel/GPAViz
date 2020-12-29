@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Moved index.html for Github Pages hosting.">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Undid moving index.html.">
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
       <workItem from="1608997177780" duration="22827000" />
       <workItem from="1609148576618" duration="623000" />
       <workItem from="1609175055992" duration="7686000" />
-      <workItem from="1609236773676" duration="7339000" />
+      <workItem from="1609236773676" duration="7454000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -200,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609247567240</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Undid moving index.html.">
+      <created>1609247889177</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1609247889177</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +256,8 @@
     <MESSAGE value="Replaced deprecated click event listeners v2." />
     <MESSAGE value="Started implementing OCR." />
     <MESSAGE value="Moved index.html for Github Pages hosting." />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved index.html for Github Pages hosting." />
+    <MESSAGE value="Undid moving index.html." />
+    <option name="LAST_COMMIT_MESSAGE" value="Undid moving index.html." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
