@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Undid moving index.html.">
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Restructured project for Github Pages hosting.">
+      <change beforePath="$PROJECT_DIR$/.idea/GPAViz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GPAViz.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,6 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1m9uQLTXrzmsUwDZwcgBBjjYEGN" />
@@ -70,7 +79,7 @@
       <workItem from="1608997177780" duration="22827000" />
       <workItem from="1609148576618" duration="623000" />
       <workItem from="1609175055992" duration="7686000" />
-      <workItem from="1609236773676" duration="7454000" />
+      <workItem from="1609236773676" duration="11928000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -205,7 +214,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609247889177</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Replaced local d3.js source with CDN.">
+      <created>1609248017145</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1609248017145</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Restructured project for Github Pages hosting.">
+      <created>1609248841342</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1609248841342</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +280,9 @@
     <MESSAGE value="Started implementing OCR." />
     <MESSAGE value="Moved index.html for Github Pages hosting." />
     <MESSAGE value="Undid moving index.html." />
-    <option name="LAST_COMMIT_MESSAGE" value="Undid moving index.html." />
+    <MESSAGE value="Replaced local d3.js source with CDN." />
+    <MESSAGE value="Restructured project for Github Pages hosting." />
+    <option name="LAST_COMMIT_MESSAGE" value="Restructured project for Github Pages hosting." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

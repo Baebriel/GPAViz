@@ -394,34 +394,26 @@ const file = pond.getFiles;
 //TODO: use OCR from DARS report 'summary of courses taken' instead of manual input
 //https://ourcodeworld.com/articles/read/580/how-to-convert-images-to-text-with-pure-javascript-using-tesseract-js
 
-// initialize tesseract in browser
-window.Tesseract = Tesseract.create({
-  // Path to worker
-  workerPath: 'http://localhost/js/worker.js',
-  // Path of folder where the language trained data is located
-  // note the "/" at the end, this string will be concatenated with the selected language
-  langPath: 'http://localhost/langs-folder/',
-  // Path to index script of the tesseract core ! https://github.com/naptha/tesseract.js-core
-  corePath: 'http://localhost/js/index.js',
-});
-
 // get file upon upload
 const inputFile = document.getElementById("file-input");
 inputFile.addEventListener("change", handleFiles, false);
 let file = [];
 
 function handleFiles() {
-  const fileList = this.files; /* now you can work with the file list */
+  const fileList = this.files;
   file = fileList[0];
   console.log('file size: ' + file.size + ' bytes');
+  //print file name
+  document.getElementById("file-name").textContent = file.name;
 }
 
 // img to text upon button click
-document.getElementById("img-to-txt").addEventListener("click", function(){
+document.getElementById("img-to-text").addEventListener("click", function(){
   let btn = this;
 
   // Disable button until the text recognition finishes
   btn.disable = true;
+  console.log('disabled button');
 
   // Convert an image to text. This task works asynchronously, so you may show
   // your user a loading dialog or something like that, or show the progress with Tesseract
@@ -431,7 +423,7 @@ document.getElementById("img-to-txt").addEventListener("click", function(){
     console.log(result);
 
     // Show recognized text in the browser !
-    alert(result.text);
+    alert(result.data.text);
   }).finally(function(){
     // Enable button once the text recognition finishes (either if fails or not)
     btn.disable = false;
