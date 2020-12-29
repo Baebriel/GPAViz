@@ -395,24 +395,35 @@ const file = pond.getFiles;
 //https://ourcodeworld.com/articles/read/580/how-to-convert-images-to-text-with-pure-javascript-using-tesseract-js
 
 // get file upon upload
-const inputFile = document.getElementById("file-input");
-inputFile.addEventListener("change", handleFiles, false);
+const fileInput = document.getElementById("file-input");
+fileInput.addEventListener("change", handleFiles, false);
 let file = [];
+
+// name 'Draw chart' button
+let ocrBtn = document.getElementById("img-to-text");
+ocrBtn.setAttribute("disabled","disabled");
 
 function handleFiles() {
   const fileList = this.files;
   file = fileList[0];
   console.log('file size: ' + file.size + ' bytes');
+
   //print file name
-  document.getElementById("file-name").textContent = file.name;
+  document.getElementById("file-name").textContent = 'File name: ' + file.name;
+
+  // when file is uploaded, enable 'Draw chart' button
+  ocrBtn.removeAttribute("disabled");
 }
 
 // img to text upon button click
-document.getElementById("img-to-text").addEventListener("click", function(){
-  let btn = this;
+
+ocrBtn.addEventListener("click", imgToText, false);
+
+function imgToText(){
 
   // Disable button until the text recognition finishes
-  btn.disable = true;
+  ocrBtn.setAttribute("disabled","disabled");
+  ocrBtn.innerText = "Loading...";
   console.log('disabled button');
 
   // Convert an image to text. This task works asynchronously, so you may show
@@ -426,6 +437,7 @@ document.getElementById("img-to-text").addEventListener("click", function(){
     alert(result.data.text);
   }).finally(function(){
     // Enable button once the text recognition finishes (either if fails or not)
-    btn.disable = false;
+    ocrBtn.removeAttribute("disabled");
+    ocrBtn.innerText = "Draw chart";
   });
-}, false);
+}
