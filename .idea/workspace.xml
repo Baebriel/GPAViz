@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Replaced deprecated click event listeners v2.">
-      <change afterPath="$PROJECT_DIR$/courses.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/filepond.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/filepond.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/tesseract.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/worker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/langs-folder/eng.traineddata.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Started implementing OCR.">
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +38,15 @@
       <recent name="C:\Users\gabri\WebstormProjects\GPAViz\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gabri\WebstormProjects\GPAViz" />
       <recent name="C:\Users\gabri\WebstormProjects\GPAViz\js" />
       <recent name="C:\Users\gabri\WebstormProjects\GPAViz\css" />
       <recent name="C:\Users\gabri\WebstormProjects\GPAViz\langs-folder" />
-      <recent name="C:\Users\gabri\WebstormProjects\GPAViz" />
       <recent name="C:\Users\gabri\WebstormProjects\GPAViz\js\libraries" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GPAViz/templates/index.html" useBuiltInWebServerPort="true">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GPAViz/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/main.js" working-dir="$PROJECT_DIR$/js">
@@ -80,7 +72,7 @@
       <workItem from="1608997177780" duration="22827000" />
       <workItem from="1609148576618" duration="623000" />
       <workItem from="1609175055992" duration="7686000" />
-      <workItem from="1609236773676" duration="6349000" />
+      <workItem from="1609236773676" duration="7013000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -194,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609196920555</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Started implementing OCR.">
+      <created>1609246949252</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1609246949252</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +242,8 @@
     <MESSAGE value="Fixed line appearing behind bars." />
     <MESSAGE value="Replaced deprecated click event listeners." />
     <MESSAGE value="Replaced deprecated click event listeners v2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced deprecated click event listeners v2." />
+    <MESSAGE value="Started implementing OCR." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started implementing OCR." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
