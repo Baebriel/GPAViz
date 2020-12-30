@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Implemented OCR to recognize text from uploaded file.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Improved upload and buttons flow.">
+      <change afterPath="$PROJECT_DIR$/OCR-result.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
@@ -78,7 +78,7 @@
       <workItem from="1608997177780" duration="22827000" />
       <workItem from="1609148576618" duration="623000" />
       <workItem from="1609175055992" duration="7686000" />
-      <workItem from="1609236773676" duration="14601000" />
+      <workItem from="1609236773676" duration="26623000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -234,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609255352550</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Improved upload and buttons flow.">
+      <created>1609258099837</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1609258099837</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +271,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Worked on parsing form data." />
     <MESSAGE value="Successfully obtained average GPA for each given semester." />
     <MESSAGE value="Implemented bar chart update event." />
     <MESSAGE value="Testing Github login." />
@@ -289,7 +295,8 @@
     <MESSAGE value="Replaced local d3.js source with CDN." />
     <MESSAGE value="Restructured project for Github Pages hosting." />
     <MESSAGE value="Implemented OCR to recognize text from uploaded file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented OCR to recognize text from uploaded file." />
+    <MESSAGE value="Improved upload and buttons flow." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved upload and buttons flow." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
