@@ -28,11 +28,14 @@ const sample = [{
     gpa: '3.60',
     cumulative: '3.08'
   },
+    /*
   {
     semester: 'SP20',
     gpa: '0.00',
     cumulative: '3.08'
   },
+
+     */
   {
     semester: 'SU20',
     gpa: '3.24',
@@ -291,6 +294,7 @@ function imgToText(){
 
   // Convert an image to text. This task works asynchronously, so you may show
   // your user a loading dialog or something like that, or show the progress with Tesseract
+  /*
   Tesseract.recognize(file).then(function(result){
 
     //TODO: OCR
@@ -309,6 +313,28 @@ function imgToText(){
     ocrBtn.innerText = "Draw chart";
     document.getElementById("file-name").textContent = 'File name: ';
   });
+
+   */
+
+  const worker = Tesseract.createWorker({
+    logger: m => console.log(m)
+  });
+  Tesseract.setLogging(true);
+  work();
+
+  async function work() {
+    await worker.load();
+    await worker.loadLanguage('eng');
+    await worker.initialize('eng');
+
+    let result = await worker.detect(file);
+    console.log(result.data);
+
+    result = await worker.recognize(file);
+    console.log(result.data);
+
+    await worker.terminate();
+  }
 }
 
 /**
@@ -396,7 +422,7 @@ function parseOCR(textResult) {
   console.log(lines.length);
 
 // https://regex101.com/r/LM2l3f/1/
-  const pattern = /(?<semester>^[A-Z]{2,3}[0-9]{2}) *(?<course>[A-Z]{2,4} *[0-9\-]{3}).*(?<hours>[0-9][\.]?[0-9]{1,2}) (?<grade>[ABCDF][+-]?$)/g;
+  const pattern = /(?<semester>^[A-Z]{2,3}[0-9]{2}) *(?<course>[A-Z]{2,4} *[0-9\-]{3}).*(?<hours>[0-9][\.]?[0-9]{1,2}) (?<grade>[ABCDF][+-]?)($| *>R)/g;
 
   const courses = [];
 

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Improved upload and buttons flow.">
-      <change afterPath="$PROJECT_DIR$/OCR-result.txt" afterDir="false" />
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Implemented OCR to recognize courses and draw chart.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
@@ -19,6 +18,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1m9uQLTXrzmsUwDZwcgBBjjYEGN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -78,7 +78,7 @@
       <workItem from="1608997177780" duration="22827000" />
       <workItem from="1609148576618" duration="623000" />
       <workItem from="1609175055992" duration="7686000" />
-      <workItem from="1609236773676" duration="26623000" />
+      <workItem from="1609236773676" duration="33947000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -241,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609258099837</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Implemented OCR to recognize courses and draw chart.">
+      <created>1609315684825</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1609315684825</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +278,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Successfully obtained average GPA for each given semester." />
     <MESSAGE value="Implemented bar chart update event." />
     <MESSAGE value="Testing Github login." />
     <MESSAGE value="Fixed typo." />
@@ -296,7 +302,8 @@
     <MESSAGE value="Restructured project for Github Pages hosting." />
     <MESSAGE value="Implemented OCR to recognize text from uploaded file." />
     <MESSAGE value="Improved upload and buttons flow." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved upload and buttons flow." />
+    <MESSAGE value="Implemented OCR to recognize courses and draw chart." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented OCR to recognize courses and draw chart." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
