@@ -317,10 +317,25 @@ function imgToText(){
    */
 
   const worker = Tesseract.createWorker({
-    logger: m => console.log(m)
+    logger: m => {
+      if ('progress' in m) {
+        document.getElementById("progress").textContent = "Progress: " + m.status + ' ' + (Math.floor(parseFloat(m.progress) * 100)) + '%';
+      } else {
+        document.getElementById("progress").textContent = "Progress: " + m.status;
+      }
+    }
   });
   Tesseract.setLogging(true);
-  work();
+  work().then(result => {
+    const courses = parseOCR(result.data.text);
+    const semesters_ordered = coursesToOrderedSemesters(courses);
+    update(semesters_ordered);
+  }).finally(function(){
+    // Enable button once the text recognition finishes (either if fails or not)
+    ocrBtn.innerText = "Draw chart";
+    document.getElementById("file-name").textContent = "File name: ";
+    document.getElementById("progress").textContent = "Progress: ";
+  });
 
   async function work() {
     await worker.load();
@@ -334,6 +349,7 @@ function imgToText(){
     console.log(result.data);
 
     await worker.terminate();
+    return result;
   }
 }
 
