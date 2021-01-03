@@ -327,7 +327,7 @@ function imgToText(){
   });
   Tesseract.setLogging(true);
   work().then(result => {
-    const courses = parseOCR(result.data.text);
+    const courses = parseOCR(result.data.text, false);
     const semesters_ordered = coursesToOrderedSemesters(courses);
     update(semesters_ordered);
   }).finally(function(){
@@ -356,79 +356,81 @@ function imgToText(){
 /**
  * Parse data from OCR
  * @param textResult: result.data.text from tesseract
+ * @param testingFlag: if true, textResult is redefined to be a prescribed string
  */
-function parseOCR(textResult) {
+function parseOCR(textResult, testingFlag) {
   // it is possible that copy-pasting text from browser console is different that direct result from OCR. check later.
-  /*
-  textResult = "FA17 AE 100 A 20 A\n" +
-      "\n" +
-      "FA17 AE 199 CD2 20 A >R\n" +
-      "FA17 AVI 101 30 TR PARKLAND: AVI 101\n" +
-      "FA17 BADM 1--7 3.0 PS\n" +
-      "FA17 CHEM 102 GL1 3.0 C+\n" +
-      "FA17 CHEM 103 S52 1.0 B+\n" +
-      "FA17 ENG 100 AE2 00 s\n" +
-      "\n" +
-      "FA17 ENGL 1--4 30 PS\n" +
-      "FA17 FR2--5 20 PS\n" +
-      "FA17 GEOG 1018 30 PS\n" +
-      "FA17 MATH 220 1 50 PS\n" +
-      "FA17 MATH 231 EL1 3.0 B\n" +
-      "\n" +
-      "FA17  MATH 299 EL1 10 B\n" +
-      "\n" +
-      "FA17 RHET 1--3 30 PS\n" +
-      "FA17 RHET 1051 40 PS\n" +
-      "SP18 AE 199 SDM 1.0 A+ >R\n" +
-      "SP18  AvI 120 30 TR PARKLAND: AVI 120\n" +
-      "SP18 MATH 241 BL2 40 B+\n" +
-      "SP18 PHYS 211 A3 40 A-\n" +
-      "SP18 SPAN 122 D1 40 C+\n" +
-      "FA18 AVI 130 30 TR PARKLAND: AVI 129\n" +
-      "FA18 MATH 285 D1 30 B\n" +
-      "\n" +
-      "FA18 MSE 280 A 30 B\n" +
-      "\n" +
-      "FA18 PHYS 212 A2 40 C-\n" +
-      "FA18 TAM 210 AL2 20 C+\n" +
-      "WI19 ECON 102 ONL 30 B\n" +
-      "SP19 AE 202A 30 A\n" +
-      "SP19 LAS 291 SAK 00 s\n" +
-      "SP19 MATH 415 AL4 3.0 D+\n" +
-      "SP19  ME 200 AL2 3.0 B+\n" +
-      "SP19 TAM 212 AE2 30 B\n" +
-      "\n" +
-      "FA19 AE311A 30 A\n" +
-      "\n" +
-      "FA19 AE321A 30 B-\n" +
-      "FA19 AE 353A 30 A\n" +
-      "\n" +
-      "FA19 IE 300 BL1 30 A\n" +
-      "\n" +
-      "FA19 JS212A1 3.0 B+\n" +
-      "SP20 AE312A 30 CR\n" +
-      "SP20 AE323A 30 CR\n" +
-      "SP20 AE 352 BL 30 CR\n" +
-      "SP20 AE370A 30 CR\n" +
-      "SP20 ECE 205AL1 30 CR\n" +
-      "SU20 AE 402 A0 3.0 B+\n" +
-      "SU20 ECE 206 A1 101 B\n" +
-      "\n" +
-      "FA20 AE433A 3.0 B+\n" +
-      "FA20 AE 442A1 30 B\n" +
-      "\n" +
-      "FA20 AE 460 AE1 20 A\n" +
-      "\n" +
-      "FA20 AE 483 AE1 20 A\n" +
-      "\n" +
-      "FA20 CS 125AL1 40 A\n" +
-      "FA20 CS 196 25 1.0 A+\n" +
-      "SP21  AE 443 A1 30 IP >l\n" +
-      "SP21 AE 461 AS1 20 P >l\n" +
-      "SP21 AE484A 30 IP >l\n" +
-      "SP21 FAA102A 30 IP >l"
 
-   */
+  if (testingFlag) {
+    console.log('testing regex using predefined text');
+    textResult = "FA17 AE 100 A 20 A\n" +
+        "\n" +
+        "FA17 AE 199 CD2 20 A >R\n" +
+        "FA17 AVI 101 30 TR PARKLAND: AVI 101\n" +
+        "FA17 BADM 1--7 3.0 PS\n" +
+        "FA17 CHEM 102 GL1 3.0 C+\n" +
+        "FA17 CHEM 103 S52 1.0 B+\n" +
+        "FA17 ENG 100 AE2 00 s\n" +
+        "\n" +
+        "FA17 ENGL 1--4 30 PS\n" +
+        "FA17 FR2--5 20 PS\n" +
+        "FA17 GEOG 1018 30 PS\n" +
+        "FA17 MATH 220 1 50 PS\n" +
+        "FA17 MATH 231 EL1 3.0 B\n" +
+        "\n" +
+        "FA17  MATH 299 EL1 10 B\n" +
+        "\n" +
+        "FA17 RHET 1--3 30 PS\n" +
+        "FA17 RHET 1051 40 PS\n" +
+        "SP18 AE 199 SDM 1.0 A+ >R\n" +
+        "SP18  AvI 120 30 TR PARKLAND: AVI 120\n" +
+        "SP18 MATH 241 BL2 40 B+\n" +
+        "SP18 PHYS 211 A3 40 A-\n" +
+        "SP18 SPAN 122 D1 40 C+\n" +
+        "FA18 AVI 130 30 TR PARKLAND: AVI 129\n" +
+        "FA18 MATH 285 D1 30 B\n" +
+        "\n" +
+        "FA18 MSE 280 A 30 B\n" +
+        "\n" +
+        "FA18 PHYS 212 A2 40 C-\n" +
+        "FA18 TAM 210 AL2 20 C+\n" +
+        "WI19 ECON 102 ONL 30 B\n" +
+        "SP19 AE 202A 30 A\n" +
+        "SP19 LAS 291 SAK 00 s\n" +
+        "SP19 MATH 415 AL4 3.0 D+\n" +
+        "SP19  ME 200 AL2 3.0 B+\n" +
+        "SP19 TAM 212 AE2 30 B\n" +
+        "\n" +
+        "FA19 AE311A 30 A\n" +
+        "\n" +
+        "FA19 AE321A 30 B-\n" +
+        "FA19 AE 353A 30 A\n" +
+        "\n" +
+        "FA19 IE 300 BL1 30 A\n" +
+        "\n" +
+        "FA19 JS212A1 3.0 B+\n" +
+        "SP20 AE312A 30 CR\n" +
+        "SP20 AE323A 30 CR\n" +
+        "SP20 AE 352 BL 30 CR\n" +
+        "SP20 AE370A 30 CR\n" +
+        "SP20 ECE 205AL1 30 CR\n" +
+        "SU20 AE 402 A0 3.0 B+\n" +
+        "SU20 ECE 206 A1 101 B\n" +
+        "\n" +
+        "FA20 AE433A 3.0 B+\n" +
+        "FA20 AE 442A1 30 B\n" +
+        "\n" +
+        "FA20 AE 460 AE1 20 A\n" +
+        "\n" +
+        "FA20 AE 483 AE1 20 A\n" +
+        "\n" +
+        "FA20 CS 125AL1 40 A\n" +
+        "FA20 CS 196 25 1.0 A+\n" +
+        "SP21  AE 443 A1 30 IP >l\n" +
+        "SP21 AE 461 AS1 20 P >l\n" +
+        "SP21 AE484A 30 IP >l\n" +
+        "SP21 FAA102A 30 IP >l"
+  }
 
   //TODO: figure out why regex does not capture some courses
   //TODO: switch to using actual OCR data once regex is fixed
