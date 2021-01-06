@@ -51,7 +51,22 @@ const sample = [{
 
 // ================ BEGIN CHART CREATION ========================
 // define constants
+
+const div = d3.select("#container").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
 const svg = d3.select('#chart');
+
+// create tooltip
+const tool_tip = d3.tip()
+    .attr("class", "d3-tip")
+    .offset([-8, 0])
+    .html(function (d) {
+      return d.semester + ': ' + d.gpa;
+    });
+svg.call(tool_tip);
+
 const margin = 60;
 const width = 1000 - 2 * margin;
 const height = 600 - 2 * margin;
@@ -76,22 +91,56 @@ chart.append('g')
 
 const xAxis = d3.axisBottom(xScale)
 
-const gx = chart.append('g')
+chart.append('g')
     .attr('transform', `translate(0, ${height})`)
     .attr('class', 'x_axis')
     .call(xAxis);
 
+// add horizontal lines
+const makeYLines = () => d3.axisLeft()
+    .scale(yScale)
+
+chart.append('g')
+    .attr('class', 'grid')
+    .call(makeYLines()
+        .tickSize(-width, 0, 0)
+        .tickFormat('')
+    )
+
+
 // create and add bars
-chart.selectAll()
+const bars = chart.selectAll(".bar")
     .data(sample)
     .enter()
     .append('rect')
     .attr('class', 'bar')
+
+bars
     .attr('x', (d) => xScale(d.semester))
     .attr('y', (d) => yScale(d.gpa))
     .attr('height', (d) => height - yScale(d.gpa))
     .attr('width', xScale.bandwidth())
-    .call(param => console.log('creating initial bars'));
+    .call(param => console.log('creating initial bars'))
+    .attr("fill", 'grey')
+
+// mouse events
+bars
+    .on("mouseover", function(d) {
+      d3.select(this)
+          .attr("fill", "black");
+      console.log('mouseover');
+      tool_tip.show(d)
+    })
+    .on("mousemove", function() {
+
+    })
+    .on("mouseout", function(d) {
+      d3.select(this)
+          .attr("fill", 'grey');
+      console.log('mouseout');
+      tool_tip.hide(d)
+    })
+
 
 // add y axis label
 svg

@@ -11,5 +11,6 @@
     <orderEntry type="library" name="@types/jquery" level="application" />
     <orderEntry type="library" name="d3.v5" level="application" />
     <orderEntry type="library" name="tesseract.js" level="application" />
+    <orderEntry type="library" name="d3.tip.v0.6.3" level="application" />
   </component>
 </module>
