@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Undid moving index.html.">
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added comments.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,7 +11,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1m9uQLTXrzmsUwDZwcgBBjjYEGN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -70,7 +77,9 @@
       <workItem from="1608997177780" duration="22827000" />
       <workItem from="1609148576618" duration="623000" />
       <workItem from="1609175055992" duration="7686000" />
-      <workItem from="1609236773676" duration="7454000" />
+      <workItem from="1609236773676" duration="34063000" />
+      <workItem from="1609459180165" duration="73000" />
+      <workItem from="1609698414513" duration="9618000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -205,7 +214,77 @@
       <option name="project" value="LOCAL" />
       <updated>1609247889177</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Replaced local d3.js source with CDN.">
+      <created>1609248017145</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1609248017145</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Restructured project for Github Pages hosting.">
+      <created>1609248841342</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1609248841342</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Implemented OCR to recognize text from uploaded file.">
+      <created>1609255352550</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1609255352550</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Improved upload and buttons flow.">
+      <created>1609258099837</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1609258099837</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Implemented OCR to recognize courses and draw chart.">
+      <created>1609315684825</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1609315684825</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Changed OCR method to get allow for progress monitoring.">
+      <created>1609458987426</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1609458987426</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Reworked OCR method and added progress logger.">
+      <created>1609703305576</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1609703305576</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Better formatted code for regex testing.">
+      <created>1609705091738</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1609705091738</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added progress bar.">
+      <created>1609891636057</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1609891636057</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added comments.">
+      <created>1609892521868</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1609892521868</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,13 +314,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Worked on parsing form data." />
-    <MESSAGE value="Successfully obtained average GPA for each given semester." />
-    <MESSAGE value="Implemented bar chart update event." />
-    <MESSAGE value="Testing Github login." />
-    <MESSAGE value="Fixed typo." />
-    <MESSAGE value="Added Contact and About pages." />
-    <MESSAGE value="Removed input text upon 'add' and added fadeout on 'remove'." />
     <MESSAGE value="Formatted code." />
     <MESSAGE value="Added Bootstrap nav bar." />
     <MESSAGE value="Formatted chart creation and update code." />
@@ -257,7 +329,17 @@
     <MESSAGE value="Started implementing OCR." />
     <MESSAGE value="Moved index.html for Github Pages hosting." />
     <MESSAGE value="Undid moving index.html." />
-    <option name="LAST_COMMIT_MESSAGE" value="Undid moving index.html." />
+    <MESSAGE value="Replaced local d3.js source with CDN." />
+    <MESSAGE value="Restructured project for Github Pages hosting." />
+    <MESSAGE value="Implemented OCR to recognize text from uploaded file." />
+    <MESSAGE value="Improved upload and buttons flow." />
+    <MESSAGE value="Implemented OCR to recognize courses and draw chart." />
+    <MESSAGE value="Changed OCR method to get allow for progress monitoring." />
+    <MESSAGE value="Reworked OCR method and added progress logger." />
+    <MESSAGE value="Better formatted code for regex testing." />
+    <MESSAGE value="Added progress bar." />
+    <MESSAGE value="Added comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
