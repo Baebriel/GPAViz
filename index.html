@@ -93,16 +93,20 @@
           <tr>
             <td><button id="file-input-redirect" onclick="document.getElementById('file-input').click()">Choose file</button></td>
             <input type="file" id="file-input" style="display: none"> <!-- hidden file input button -->
-            <td><div id="file-name">File name:</div></td>
+            <td><div id="file-name-label">File name:</div></td>
+            <td><div id="file-name-value"></div></td>
           </tr>
 
           <tr>
             <td><button id="img-to-text">Draw chart</button></td>
-            <td><div id="progress">Progress: </div></td>
+            <td><div id="progress-label">Progress: </div></td>
+            <td><div id="progress-value"></div></td>
           </tr>
 
           <tr>
             <td><button id="test-OCR" onclick="parseOCR('test', true)">Test regex</button></td>
+            <td></td>
+            <td><progress id="progress-bar" value="32" max="100"> 32% </progress></td>
           </tr>
         </table>
       </div>

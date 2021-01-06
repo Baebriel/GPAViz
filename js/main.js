@@ -276,7 +276,7 @@ function handleFiles() {
   console.log('file size: ' + file.size + ' bytes');
 
   //print file name
-  document.getElementById("file-name").textContent = 'File name: ' + file.name;
+  document.getElementById("file-name-value").textContent = file.name;
 
   // when file is uploaded, enable 'Draw chart' button
   ocrBtn.removeAttribute("disabled");
@@ -290,7 +290,10 @@ function imgToText(){
 
   // Disable button until the text recognition finishes
   ocrBtn.setAttribute("disabled","disabled");
-  ocrBtn.innerText = "Loading...";
+  ocrBtn.innerText = "Loading..."
+
+  // start progress bar
+  $('#progress-bar').show();
 
   // Convert an image to text. This task works asynchronously, so you may show
   // your user a loading dialog or something like that, or show the progress with Tesseract
@@ -318,13 +321,12 @@ function imgToText(){
 
   const worker = Tesseract.createWorker({
     logger: m => {
+      document.getElementById("progress-value").textContent = m.status;
       if ('progress' in m) {
-        document.getElementById("progress").textContent = "Progress: " + m.status + ' ' + (Math.floor(parseFloat(m.progress) * 100)) + '%';
-      } else {
-        document.getElementById("progress").textContent = "Progress: " + m.status;
-      }
+        document.getElementById("progress-bar").textContent = Math.floor(parseFloat(m.progress) * 100) + '%';
+        document.getElementById("progress-bar").value = Math.floor(parseFloat(m.progress) * 100);
     }
-  });
+  }});
   Tesseract.setLogging(true);
   work().then(result => {
     const courses = parseOCR(result.data.text, false);
@@ -333,8 +335,9 @@ function imgToText(){
   }).finally(function(){
     // Enable button once the text recognition finishes (either if fails or not)
     ocrBtn.innerText = "Draw chart";
-    document.getElementById("file-name").textContent = "File name: ";
-    document.getElementById("progress").textContent = "Progress: ";
+    document.getElementById("file-name-value").textContent = "";
+    document.getElementById("progress-value").textContent = "";
+    $('#progress-bar').hide();
   });
 
   async function work() {
