@@ -1,3 +1,4 @@
+// placeholder semester data to use in chart
 const sample = [{
   semester: 'FA17',
   gpa: '3.19',
@@ -49,8 +50,8 @@ const sample = [{
 ];
 
 // ================ BEGIN CHART CREATION ========================
+// define constants
 const svg = d3.select('#chart');
-
 const margin = 60;
 const width = 1000 - 2 * margin;
 const height = 600 - 2 * margin;
@@ -162,7 +163,7 @@ $( ".draw" ).on("click",function() {
     newData.push(newObject);
   }
 
-  // call function to format data into courses groupde by semester to plot
+  // call function to format data into courses grouped by semester to plot
   const semesters_ordered = coursesToOrderedSemesters(newData);
 
   // update chart
@@ -175,12 +176,6 @@ function update(data) {
   const transitionTime = 500;
 
   console.log('updating chart');
-
-  // remove X axis
-  /*
-  console.log('before update:')
-  console.log(chart.select('.x_axis')._groups[0][0].textContent);
-   */
 
   // remove x axis
   chart.selectAll('.x_axis').remove()
@@ -201,10 +196,11 @@ function update(data) {
       .call(xAxis);
 
 
-
+  // define bars group
   const bars = chart.selectAll("rect")
       .data(data);
 
+  // update bars using new data
   bars
       .enter()
       .append("rect") // Add a new rect for each new elements
@@ -240,18 +236,10 @@ function update(data) {
   u
       .exit()
       .remove()
-
-  /*
-  // timeout function to print axis text content after update transition is complete
-  setTimeout(function(){
-    console.log('after update:')
-    console.log(chart.select('.x_axis')._groups[0][0].textContent);
-  },transitionTime);
-   */
 }
 
 /*
-// filepond stuff
+// filepond stuff for file upload. not used as of now.
 const inputElement = document.querySelector('input[type="file"]');
 const pond = FilePond.create( inputElement );
 const file = pond.getFiles;
@@ -271,6 +259,7 @@ let ocrBtn = document.getElementById("img-to-text");
 ocrBtn.setAttribute("disabled","disabled");
 
 function handleFiles() {
+  // get file
   const fileList = this.files;
   file = fileList[0];
   console.log('file size: ' + file.size + ' bytes');
@@ -283,7 +272,6 @@ function handleFiles() {
 }
 
 // img to text upon button click
-
 ocrBtn.addEventListener("click", imgToText, false);
 
 function imgToText(){
@@ -295,48 +283,38 @@ function imgToText(){
   // start progress bar
   $('#progress-bar').show();
 
-  // Convert an image to text. This task works asynchronously, so you may show
-  // your user a loading dialog or something like that, or show the progress with Tesseract
-  /*
-  Tesseract.recognize(file).then(function(result){
-
-    //TODO: OCR
-    // steps to continue:
-    // 1. parse text for courses
-    // 2. arrange courses by semesters
-    // 3. sort semesters
-    // 4. update chart
-
-    const courses = parseOCR(result.data.text);
-    const semesters_ordered = coursesToOrderedSemesters(courses);
-    update(semesters_ordered);
-
-  }).finally(function(){
-    // Enable button once the text recognition finishes (either if fails or not)
-    ocrBtn.innerText = "Draw chart";
-    document.getElementById("file-name").textContent = 'File name: ';
-  });
-
-   */
-
+  // create asynchronous Tesseract worker
   const worker = Tesseract.createWorker({
     logger: m => {
+      // update progress text
       document.getElementById("progress-value").textContent = m.status;
       if ('progress' in m) {
-        document.getElementById("progress-bar").textContent = Math.floor(parseFloat(m.progress) * 100) + '%';
+        // update progress bar
         document.getElementById("progress-bar").value = Math.floor(parseFloat(m.progress) * 100);
     }
   }});
+
+  // enable Tesseract logging
   Tesseract.setLogging(true);
+
+  // start async function
   work().then(result => {
+    // parse courses from text result
     const courses = parseOCR(result.data.text, false);
+
+    // group courses into ordered semesters
     const semesters_ordered = coursesToOrderedSemesters(courses);
+
+    // update chart
     update(semesters_ordered);
+
   }).finally(function(){
-    // Enable button once the text recognition finishes (either if fails or not)
+    // once async function is done, reset button text, file name text and progress text
     ocrBtn.innerText = "Draw chart";
     document.getElementById("file-name-value").textContent = "";
     document.getElementById("progress-value").textContent = "";
+
+    // also hide progress bar
     $('#progress-bar').hide();
   });
 
@@ -442,24 +420,31 @@ function parseOCR(textResult, testingFlag) {
   const lines = textResult.split('\n');
   console.log(lines.length);
 
-// https://regex101.com/r/LM2l3f/1/
+  // https://regex101.com/r/LM2l3f/1/
   const pattern = /(?<semester>^[A-Z]{2,3}[0-9]{2}) *(?<course>[A-Z]{2,4} *[0-9\-]{3}).*(?<hours>[0-9][\.]?[0-9]{1,2}) (?<grade>[ABCDF][+-]?)($| *>R)/g;
 
+  // define course object array
   const courses = [];
 
   const match = pattern.exec(lines[0]);
   console.log(lines[0]);
   console.log(match);
 
+  // iterate through each text line
   for (let i = 0; i < lines.length; i++) {
+    // define empty object
     const courseObj = {};
+
+    // get regex matches
     const match = pattern.exec(lines[i]);
 
     if (match != null) {
 
+      // add object properties
       courseObj['semester'] = match.groups.semester;
       courseObj['course'] = match.groups.course;
 
+      // OCR may not detect decimal in hours number, so parse accordingly
       let hours = parseFloat(match.groups.hours);
       if (hours > 5 && hours < 50) {
         hours /= 10;
@@ -467,9 +452,11 @@ function parseOCR(textResult, testingFlag) {
         hours /= 100;
       }
 
+      // add object properties
       courseObj['hours'] = hours;
       courseObj['grade'] = match.groups.grade;
 
+      // push new course object to course object array
       courses.push(courseObj);
     }
   }
@@ -530,16 +517,6 @@ function coursesToOrderedSemesters(data) {
 
   const coursesBySemester = groupBySemester(data);
 
-  // pretty print
-  /*
-    console.log(
-        JSON.stringify({
-          coursesBySemester: groupBySemester(data),
-        }, null, 2)
-    );
-   */
-
-
   // get sum of credit hours or quality points
   function sum(semester, argument) {
     let sum = 0;
@@ -558,7 +535,6 @@ function coursesToOrderedSemesters(data) {
 
   // compute semester average gpa
   // first, arrange unique semesters into object of semester objects -> object with avg gpa and cumulative
-
   const semesters = [];
   for (i = 0; i < uniqueSemesters.length; i++) {
     const semesterObject = {}
@@ -600,7 +576,6 @@ function coursesToOrderedSemesters(data) {
       }
 
     });
-
     return array;
   }
 
