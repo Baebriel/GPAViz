@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added progress bar.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added comments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +79,7 @@
       <workItem from="1609175055992" duration="7686000" />
       <workItem from="1609236773676" duration="34063000" />
       <workItem from="1609459180165" duration="73000" />
-      <workItem from="1609698414513" duration="8168000" />
+      <workItem from="1609698414513" duration="9618000" />
     </task>
     <task id="LOCAL-00001" summary="Worked on parsing form data.">
       <created>1608925452548</created>
@@ -278,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609891636057</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added comments.">
+      <created>1609892521868</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1609892521868</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +314,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Removed input text upon 'add' and added fadeout on 'remove'." />
     <MESSAGE value="Formatted code." />
     <MESSAGE value="Added Bootstrap nav bar." />
     <MESSAGE value="Formatted chart creation and update code." />
@@ -333,7 +338,8 @@
     <MESSAGE value="Reworked OCR method and added progress logger." />
     <MESSAGE value="Better formatted code for regex testing." />
     <MESSAGE value="Added progress bar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added progress bar." />
+    <MESSAGE value="Added comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -246,7 +246,7 @@ const file = pond.getFiles;
 
  */
 
-//TODO: use OCR from DARS report 'summary of courses taken' instead of manual input
+// begin OCR stuff
 //https://ourcodeworld.com/articles/read/580/how-to-convert-images-to-text-with-pure-javascript-using-tesseract-js
 
 // get file upon upload
@@ -415,31 +415,28 @@ function parseOCR(textResult, testingFlag) {
 
   //TODO: figure out why regex does not capture some courses
   //TODO: switch to using actual OCR data once regex is fixed
-  console.log(textResult);
+  //console.log(textResult);
 
   const lines = textResult.split('\n');
   console.log(lines.length);
 
   // https://regex101.com/r/LM2l3f/1/
-  const pattern = /(?<semester>^[A-Z]{2,3}[0-9]{2}) *(?<course>[A-Z]{2,4} *[0-9\-]{3}).*(?<hours>[0-9][\.]?[0-9]{1,2}) (?<grade>[ABCDF][+-]?)($| *>R)/g;
+  const pattern = /(?<semester>^[A-Z]{2,3}[0-9]{2}) *(?<course>[A-Z]{2,4} *[0-9\-]{3}).*(?<hours>[0-9][\.]?[0-9]{1,2}) (?<grade>[ABCDF][+-]?)($| *>R)/;
 
   // define course object array
   const courses = [];
 
-  const match = pattern.exec(lines[0]);
-  console.log(lines[0]);
-  console.log(match);
-
   // iterate through each text line
   for (let i = 0; i < lines.length; i++) {
-    // define empty object
+    console.log(lines[i]);
+    // define empty course object
     const courseObj = {};
 
     // get regex matches
-    const match = pattern.exec(lines[i]);
+    const match = lines[i].match(pattern);
+    console.log(match);
 
     if (match != null) {
-
       // add object properties
       courseObj['semester'] = match.groups.semester;
       courseObj['course'] = match.groups.course;
