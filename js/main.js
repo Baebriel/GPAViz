@@ -49,6 +49,265 @@ const sample = [{
   },
 ];
 
+let courses_by_semester = [
+  {
+    "semester": "FA17",
+    "course": "AE 100",
+    "hours": 2,
+    "grade": "A",
+    "gpa": 4,
+    "qualityPoints": 8
+  },
+  {
+    "semester": "FA17",
+    "course": "AE 199",
+    "hours": 2,
+    "grade": "A",
+    "gpa": 4,
+    "qualityPoints": 8
+  },
+  {
+    "semester": "FA17",
+    "course": "CHEM 102",
+    "hours": 3,
+    "grade": "C+",
+    "gpa": 2.33,
+    "qualityPoints": 6.99
+  },
+  {
+    "semester": "FA17",
+    "course": "CHEM 103",
+    "hours": 1,
+    "grade": "B+",
+    "gpa": 3.33,
+    "qualityPoints": 3.33
+  },
+  {
+    "semester": "FA17",
+    "course": "MATH 231",
+    "hours": 3,
+    "grade": "B",
+    "gpa": 3,
+    "qualityPoints": 9
+  },
+  {
+    "semester": "FA17",
+    "course": "MATH 299",
+    "hours": 1,
+    "grade": "B",
+    "gpa": 3,
+    "qualityPoints": 3
+  },
+  {
+    "semester": "SP18",
+    "course": "AE 199",
+    "hours": 1,
+    "grade": "A+",
+    "gpa": 4,
+    "qualityPoints": 4
+  },
+  {
+    "semester": "SP18",
+    "course": "MATH 241",
+    "hours": 4,
+    "grade": "B+",
+    "gpa": 3.33,
+    "qualityPoints": 13.32
+  },
+  {
+    "semester": "SP18",
+    "course": "PHYS 211",
+    "hours": 4,
+    "grade": "A-",
+    "gpa": 3.67,
+    "qualityPoints": 14.68
+  },
+  {
+    "semester": "SP18",
+    "course": "SPAN 122",
+    "hours": 4,
+    "grade": "C+",
+    "gpa": 2.33,
+    "qualityPoints": 9.32
+  },
+  {
+    "semester": "FA18",
+    "course": "MATH 285",
+    "hours": 3,
+    "grade": "B",
+    "gpa": 3,
+    "qualityPoints": 9
+  },
+  {
+    "semester": "FA18",
+    "course": "MSE 280",
+    "hours": 3,
+    "grade": "B",
+    "gpa": 3,
+    "qualityPoints": 9
+  },
+  {
+    "semester": "FA18",
+    "course": "PHYS 212",
+    "hours": 4,
+    "grade": "C-",
+    "gpa": 1.67,
+    "qualityPoints": 6.68
+  },
+  {
+    "semester": "FA18",
+    "course": "TAM 210",
+    "hours": 2,
+    "grade": "C+",
+    "gpa": 2.33,
+    "qualityPoints": 4.66
+  },
+  {
+    "semester": "WI19",
+    "course": "ECON 102",
+    "hours": 3,
+    "grade": "B",
+    "gpa": 3,
+    "qualityPoints": 9
+  },
+  {
+    "semester": "SP19",
+    "course": "AE 202",
+    "hours": 3,
+    "grade": "A",
+    "gpa": 4,
+    "qualityPoints": 12
+  },
+  {
+    "semester": "SP19",
+    "course": "MATH 415",
+    "hours": 3,
+    "grade": "D+",
+    "gpa": 1.33,
+    "qualityPoints": 3.99
+  },
+  {
+    "semester": "SP19",
+    "course": "ME 200",
+    "hours": 3,
+    "grade": "B+",
+    "gpa": 3.33,
+    "qualityPoints": 9.99
+  },
+  {
+    "semester": "SP19",
+    "course": "TAM 212",
+    "hours": 3,
+    "grade": "B",
+    "gpa": 3,
+    "qualityPoints": 9
+  },
+  {
+    "semester": "FA19",
+    "course": "AE311",
+    "hours": 3,
+    "grade": "A",
+    "gpa": 4,
+    "qualityPoints": 12
+  },
+  {
+    "semester": "FA19",
+    "course": "AE321",
+    "hours": 3,
+    "grade": "B-",
+    "gpa": 2.67,
+    "qualityPoints": 8.01
+  },
+  {
+    "semester": "FA19",
+    "course": "AE 353",
+    "hours": 3,
+    "grade": "A",
+    "gpa": 4,
+    "qualityPoints": 12
+  },
+  {
+    "semester": "FA19",
+    "course": "IE 300",
+    "hours": 3,
+    "grade": "A",
+    "gpa": 4,
+    "qualityPoints": 12
+  },
+  {
+    "semester": "FA19",
+    "course": "JS212",
+    "hours": 3,
+    "grade": "B+",
+    "gpa": 3.33,
+    "qualityPoints": 9.99
+  },
+  {
+    "semester": "SU20",
+    "course": "AE 402",
+    "hours": 3,
+    "grade": "B+",
+    "gpa": 3.33,
+    "qualityPoints": 9.99
+  },
+  {
+    "semester": "SU20",
+    "course": "ECE 206",
+    "hours": 1,
+    "grade": "B",
+    "gpa": 3,
+    "qualityPoints": 3
+  },
+  {
+    "semester": "FA20",
+    "course": "AE433",
+    "hours": 3,
+    "grade": "B+",
+    "gpa": 3.33,
+    "qualityPoints": 9.99
+  },
+  {
+    "semester": "FA20",
+    "course": "AE 442",
+    "hours": 3,
+    "grade": "B",
+    "gpa": 3,
+    "qualityPoints": 9
+  },
+  {
+    "semester": "FA20",
+    "course": "AE 460",
+    "hours": 2,
+    "grade": "A",
+    "gpa": 4,
+    "qualityPoints": 8
+  },
+  {
+    "semester": "FA20",
+    "course": "AE 483",
+    "hours": 2,
+    "grade": "A",
+    "gpa": 4,
+    "qualityPoints": 8
+  },
+  {
+    "semester": "FA20",
+    "course": "CS 125",
+    "hours": 4,
+    "grade": "A",
+    "gpa": 4,
+    "qualityPoints": 16
+  },
+  {
+    "semester": "FA20",
+    "course": "CS 196",
+    "hours": 1,
+    "grade": "A+",
+    "gpa": 4,
+    "qualityPoints": 4
+  }
+];
+
 // ================ BEGIN CHART CREATION ========================
 // define constants
 
@@ -62,10 +321,23 @@ const svg = d3.select('#chart');
 const tool_tip = d3.tip()
     .attr("class", "d3-tip")
     .offset([-8, 0])
-    .html(function (d) {
-      return d.semester + ': ' + d.gpa;
-    });
 svg.call(tool_tip);
+
+// create tooltip text for bars
+function tipText(d) {
+  //TODO: refactor code to only run loop on bar creation
+  // as it stands, even though tipText is called on creation and update, it still only gets called on mouseover
+  // for some reason...
+  let tip_text = "<table>";
+  courses_by_semester.forEach(course => {
+    if (course.semester === d.semester) {
+      tip_text += "<tr><td>" + course.course + ": </td><td>" + course.grade + "</td></tr>";
+    }
+  })
+  tip_text += "</table>";
+  console.log("creating tooltip text");
+  return tip_text;
+}
 
 const margin = 60;
 const width = 1000 - 2 * margin;
@@ -139,6 +411,14 @@ bars
       tool_tip.hide(d)
     })
 
+bars
+    .call(d => {
+      tool_tip.html(function (d) {
+        console.log("calling tipText on create");
+            return tipText(d);
+          }
+      );
+    })
 
 // add y axis label
 svg
@@ -211,7 +491,10 @@ $( ".draw" ).on("click",function() {
   }
 
   // call function to format data into courses grouped by semester to plot
-  const semesters_ordered = coursesToOrderedSemesters(newData);
+  const semesters_and_courses = coursesToOrderedSemesters(newData);
+
+  const semesters_ordered = semesters_and_courses[0];
+  courses_by_semester = semesters_and_courses[1];
 
   // update chart
   update(semesters_ordered);
@@ -277,6 +560,15 @@ function update(data) {
       .call( () => console.log('adding bars'))
       .attr("fill", "grey")
       .attr("text", "test")
+
+  bars
+      .call(d => {
+        console.log("calling tipText on update");
+        tool_tip.html(function (d) {
+              return tipText(d);
+            }
+        );
+      })
 
   bars
       .exit()
@@ -368,7 +660,10 @@ function imgToText(){
         const courses = parseOCR(result.data.text, false);
 
         // group courses into ordered semesters
-        const semesters_ordered = coursesToOrderedSemesters(courses);
+        const semesters_and_courses = coursesToOrderedSemesters(courses);
+
+        const semesters_ordered = semesters_and_courses[0];
+        courses_by_semester = semesters_and_courses[1];
 
         // update chart
         update(semesters_ordered);
@@ -673,7 +968,7 @@ function coursesToOrderedSemesters(data) {
   console.log('output');
   console.log(semesters_ordered);
 
-  return semesters_ordered;
+  return [semesters_ordered, coursesBySemester];
 
   //TODO: for some reason, chart breaks when i return an array here (semesters and courses). figure out why.
 }
