@@ -317,7 +317,7 @@ const div = d3.select("#container").append("div")
 
 const svg = d3.select('#chart');
 
-// create tooltip
+// create tooltip for columns
 const tool_tip = d3.tip()
     .attr("class", "d3-tip")
     .offset([-8, 0])
@@ -332,8 +332,19 @@ const tool_tip = d3.tip()
       console.log("creating tooltip text");
       return tip_text;
     })
+
 svg.call(tool_tip);
+
+// create tooltip for cumulative gpa line
+const cum_tip = d3.tip()
+    .attr("class", "d3-tip")
+    .offset([-8, 0])
+    .html(d => "cumulative gpa: " + d.cumulative)
+
+svg.call(cum_tip)
+
 //TODO: refactor tooltip code to only run loop on bar creation, unless performance issues are not too bad
+// update: i don't think this is possible as tool_tip.show and .hide
 
 const margin = 60;
 const width = 1000 - 2 * margin;
@@ -437,6 +448,30 @@ chart.append("path")
     .data(sample)
     .attr("class", "line")
     .attr("d", line(sample))
+
+// add points on line
+chart
+    .append("g")
+    .selectAll("dot")
+    .data(sample)
+    .enter()
+    .append("circle")
+    .attr("cx", function(d) { return xScale(d.semester) + xScale.bandwidth() / 2 } )
+    .attr("cy", function(d) { return yScale(d.cumulative) } )
+    .attr("r", 5)
+    .attr("fill", "red")
+    .on("mouseover", function(d) {
+      d3.select(this)
+          .attr("fill", "#D10000");
+      cum_tip.show(d)
+    })
+    .on("mouseout", function(d) {
+      d3.select(this)
+          .attr("fill", "red");
+      cum_tip.hide(d)
+    })
+
+
 
 // ================ END CHART CREATION ========================
 
