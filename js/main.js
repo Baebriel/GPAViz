@@ -49,7 +49,7 @@ const sample = [{
   },
 ];
 
-let courses_by_semester = [
+let DATA = [
   {
     "semester": "FA17",
     "course": "AE 100",
@@ -321,23 +321,19 @@ const svg = d3.select('#chart');
 const tool_tip = d3.tip()
     .attr("class", "d3-tip")
     .offset([-8, 0])
+    .html(function(d) {
+      let tip_text = "<table>";
+      DATA.forEach(course => {
+        if (course.semester === d.semester) {
+          tip_text += "<tr><td>" + course.course + ": </td><td>" + course.grade + "</td></tr>";
+        }
+      })
+      tip_text += "</table>";
+      console.log("creating tooltip text");
+      return tip_text;
+    })
 svg.call(tool_tip);
-
-// create tooltip text for bars
-function tipText(d) {
-  //TODO: refactor code to only run loop on bar creation
-  // as it stands, even though tipText is called on creation and update, it still only gets called on mouseover
-  // for some reason...
-  let tip_text = "<table>";
-  courses_by_semester.forEach(course => {
-    if (course.semester === d.semester) {
-      tip_text += "<tr><td>" + course.course + ": </td><td>" + course.grade + "</td></tr>";
-    }
-  })
-  tip_text += "</table>";
-  console.log("creating tooltip text");
-  return tip_text;
-}
+//TODO: refactor tooltip code to only run loop on bar creation, unless performance issues are not too bad
 
 const margin = 60;
 const width = 1000 - 2 * margin;
@@ -388,11 +384,11 @@ const bars = chart.selectAll(".bar")
     .attr('class', 'bar')
 
 bars
-    .attr('x', (d) => xScale(d.semester))
+    .attr('x', /** @param d.semester */ (d) => xScale(d.semester))
     .attr('y', (d) => yScale(d.gpa))
     .attr('height', (d) => height - yScale(d.gpa))
     .attr('width', xScale.bandwidth())
-    .call(param => console.log('creating initial bars'))
+    .call(() => console.log('creating initial bars'))
     .attr("fill", 'grey')
 
 // mouse events
@@ -411,14 +407,6 @@ bars
       tool_tip.hide(d)
     })
 
-bars
-    .call(d => {
-      tool_tip.html(function (d) {
-        console.log("calling tipText on create");
-            return tipText(d);
-          }
-      );
-    })
 
 // add y axis label
 svg
@@ -491,10 +479,9 @@ $( ".draw" ).on("click",function() {
   }
 
   // call function to format data into courses grouped by semester to plot
-  const semesters_and_courses = coursesToOrderedSemesters(newData);
+  const semesters_ordered = coursesToOrderedSemesters(newData);
 
-  const semesters_ordered = semesters_and_courses[0];
-  courses_by_semester = semesters_and_courses[1];
+  DATA = newData;
 
   // update chart
   update(semesters_ordered);
@@ -506,21 +493,6 @@ function update(data) {
   const transitionTime = 500;
 
   console.log('updating chart');
-
-  /*
-  // remove x axis
-  chart.selectAll('.x_axis').remove()
-
-  // update x scale
-  xScale
-      .domain(data.map((d) => d.semester))
-
-  // add x axis
-  chart.append('g')
-      .attr('transform', `translate(0, ${height})`)
-      .attr('class', 'x_axis')
-      .call(xAxis);
-   */
 
   xScale
       .domain(data.map((d) => d.semester))
@@ -561,14 +533,6 @@ function update(data) {
       .attr("fill", "grey")
       .attr("text", "test")
 
-  bars
-      .call(d => {
-        console.log("calling tipText on update");
-        tool_tip.html(function (d) {
-              return tipText(d);
-            }
-        );
-      })
 
   bars
       .exit()
@@ -660,10 +624,9 @@ function imgToText(){
         const courses = parseOCR(result.data.text, false);
 
         // group courses into ordered semesters
-        const semesters_and_courses = coursesToOrderedSemesters(courses);
+        const semesters_ordered = coursesToOrderedSemesters(courses);
 
-        const semesters_ordered = semesters_and_courses[0];
-        courses_by_semester = semesters_and_courses[1];
+        DATA = courses;
 
         // update chart
         update(semesters_ordered);
@@ -968,7 +931,5 @@ function coursesToOrderedSemesters(data) {
   console.log('output');
   console.log(semesters_ordered);
 
-  return [semesters_ordered, coursesBySemester];
-
-  //TODO: for some reason, chart breaks when i return an array here (semesters and courses). figure out why.
+  return semesters_ordered;
 }
