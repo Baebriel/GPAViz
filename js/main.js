@@ -339,12 +339,12 @@ svg.call(tool_tip);
 const cum_tip = d3.tip()
     .attr("class", "d3-tip")
     .offset([-8, 0])
-    .html(d => "cumulative gpa: " + d.cumulative)
+    .html(d => d.cumulative)
 
 svg.call(cum_tip)
 
 //TODO: refactor tooltip code to only run loop on bar creation, unless performance issues are not too bad
-// update: i don't think this is possible as tool_tip.show and .hide
+// update: i don't think this is possible
 
 const margin = 60;
 const width = 1000 - 2 * margin;
@@ -450,12 +450,11 @@ chart.append("path")
     .attr("d", line(sample))
 
 // add points on line
-chart
-    .append("g")
-    .selectAll("dot")
+chart.selectAll(".point")
     .data(sample)
     .enter()
     .append("circle")
+    .attr("class", "point")
     .attr("cx", function(d) { return xScale(d.semester) + xScale.bandwidth() / 2 } )
     .attr("cy", function(d) { return yScale(d.cumulative) } )
     .attr("r", 5)
@@ -568,7 +567,6 @@ function update(data) {
       .attr("fill", "grey")
       .attr("text", "test")
 
-
   bars
       .exit()
       .remove()
@@ -589,6 +587,36 @@ function update(data) {
       .attr("d", line(data))
 
   u
+      .exit()
+      .remove()
+
+  // update points
+  const points = chart.selectAll(".point")
+      .data(data)
+
+  points
+      .enter()
+      .append("circle")
+      .attr("class", "point")
+      .on("mouseover", function(d) {
+        d3.select(this)
+            .attr("fill", "#D10000");
+        cum_tip.show(d)
+      })
+      .on("mouseout", function(d) {
+        d3.select(this)
+            .attr("fill", "red");
+        cum_tip.hide(d)
+      })
+      .merge(points)
+      .transition()
+      .duration(transitionTime)
+      .attr("cx", function(d) { return xScale(d.semester) + xScale.bandwidth() / 2 } )
+      .attr("cy", function(d) { return yScale(d.cumulative) } )
+      .attr("r", 5)
+      .attr("fill", "red")
+
+  points
       .exit()
       .remove()
 }
