@@ -329,7 +329,6 @@ const tool_tip = d3.tip()
         }
       })
       tip_text += "</table>";
-      console.log("creating tooltip text");
       return tip_text;
     })
 
@@ -399,7 +398,7 @@ bars
     .attr('y', (d) => yScale(d.gpa))
     .attr('height', (d) => height - yScale(d.gpa))
     .attr('width', xScale.bandwidth())
-    .call(() => console.log('creating initial bars'))
+    //.call(() => console.log('creating initial bars'))
     .attr("fill", 'grey')
 
 // mouse events
@@ -437,6 +436,18 @@ svg
     .attr('y', height + margin * 1.7)
     .attr('text-anchor', 'middle')
     .text('Semester')
+
+/*
+// add watermark
+svg
+    .append('text')
+    .attr('class', 'watermark')
+    .attr('x', width * 0.9 + margin)
+    .attr('y', height + margin * 1.7)
+    .attr('text-anchor', 'middle')
+    .style("fill", "grey")
+    .text('baebriel.github.io/GPAViz')
+ */
 
 // define line
 const line = d3.line()
@@ -563,7 +574,7 @@ function update(data) {
       .attr('y', (d) => yScale(d.gpa))
       .attr('width', xScale.bandwidth())
       .attr('height', (d) => height - yScale(d.gpa))
-      .call( () => console.log('adding bars'))
+      //.call( () => console.log('adding bars'))
       .attr("fill", "grey")
       .attr("text", "test")
 
@@ -716,10 +727,10 @@ function imgToText(){
     await worker.initialize('eng');
 
     let result = await worker.detect(file);
-    console.log(result.data);
+    //console.log(result.data);
 
     result = await worker.recognize(file);
-    console.log(result.data);
+    //console.log(result.data);
 
     await worker.terminate();
     return result;
@@ -738,7 +749,6 @@ d3.select("#download")
  * @param testingFlag: if true, textResult is redefined to be a prescribed string
  */
 function parseOCR(textResult, testingFlag) {
-  // it is possible that copy-pasting text from browser console is different that direct result from OCR. check later.
 
   if (testingFlag) {
     console.log('testing regex using predefined text');
@@ -811,10 +821,7 @@ function parseOCR(textResult, testingFlag) {
         "SP21 FAA102A 30 IP >l"
   }
 
-  //console.log(textResult);
-
   const lines = textResult.split('\n');
-  console.log(lines.length);
 
   // https://regex101.com/r/LM2l3f/1/
   const pattern = /(?<semester>^[A-Z]{2,3}[0-9]{2}) *(?<course>[A-Z]{2,4} *[0-9\-]{3}).*(?<hours>[0-9][\.]?[0-9]{1,2}) (?<grade>[ABCDF][+-]?)($| *>R)/;
@@ -851,7 +858,6 @@ function parseOCR(textResult, testingFlag) {
       courses.push(courseObj);
     }
   }
-  console.log(courses);
   return courses;
 }
 
@@ -861,8 +867,6 @@ function parseOCR(textResult, testingFlag) {
  * @returns {*}: an array of semester objects containing: semester, GPAHours, qualityPoints, gpa, cumulative
  */
 function coursesToOrderedSemesters(data) {
-  console.log('input');
-  console.log(data);
 
   // convert grade to GPA and add to object
   const gradeToPoints = {
@@ -990,9 +994,6 @@ function coursesToOrderedSemesters(data) {
 
     //TODO: write tests to make sure cumulative gpa calculation is correct
   }
-
-  console.log('output');
-  console.log(semesters_ordered);
 
   return semesters_ordered;
 }

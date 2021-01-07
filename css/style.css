@@ -33,12 +33,6 @@ div#courseDiv {
 input {
   width: 10%;
 }
-/*
-.bar {
-  fill: grey;
-}
-
- */
 
 footer {
   background-color: antiquewhite;
@@ -109,3 +103,4 @@ th, td {
   top: 100%;
   left: 0;
 }
+

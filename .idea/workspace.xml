@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added tooltip for cumulative gpa line.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added correct update behaviour for cumulative gpa tooltips.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -319,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610060407497</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Added correct update behaviour for cumulative gpa tooltips.">
+      <created>1610062119944</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1610062119945</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +358,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed cumulative GPA calculation and started cumulative GPA line updating feature." />
     <MESSAGE value="Reformatted project structure." />
     <MESSAGE value="Fixed bars being added to wrong element and therefore being placed too high." />
     <MESSAGE value="Fixed line transition." />
@@ -374,7 +382,8 @@
     <MESSAGE value="Fixed new bar color and mouse events." />
     <MESSAGE value="Made progress on bar chart tooltips." />
     <MESSAGE value="Added tooltip for cumulative gpa line." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tooltip for cumulative gpa line." />
+    <MESSAGE value="Added correct update behaviour for cumulative gpa tooltips." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added correct update behaviour for cumulative gpa tooltips." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
