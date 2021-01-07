@@ -127,8 +127,7 @@ bars
 bars
     .on("mouseover", function(d) {
       d3.select(this)
-          .attr("fill", "black");
-      console.log('mouseover');
+          .attr("fill", "#636363");
       tool_tip.show(d)
     })
     .on("mousemove", function() {
@@ -137,7 +136,6 @@ bars
     .on("mouseout", function(d) {
       d3.select(this)
           .attr("fill", 'grey');
-      console.log('mouseout');
       tool_tip.hide(d)
     })
 
@@ -226,6 +224,7 @@ function update(data) {
 
   console.log('updating chart');
 
+  /*
   // remove x axis
   chart.selectAll('.x_axis').remove()
 
@@ -237,16 +236,17 @@ function update(data) {
   chart.append('g')
       .attr('transform', `translate(0, ${height})`)
       .attr('class', 'x_axis')
-      /*
-      .transition()
-      .duration(transitionTime)
-
-       */
       .call(xAxis);
+   */
 
+  xScale
+      .domain(data.map((d) => d.semester))
+
+  chart.select(".x_axis")
+      .call(xAxis)
 
   // define bars group
-  const bars = chart.selectAll("rect")
+  const bars = chart.selectAll(".bar")
       .data(data);
 
   // update bars using new data
@@ -254,6 +254,19 @@ function update(data) {
       .enter()
       .append("rect") // Add a new rect for each new elements
       .attr('class', 'bar')
+      .on("mouseover", function(d) {
+        d3.select(this)
+            .attr("fill", "#636363");
+        tool_tip.show(d)
+      })
+      .on("mousemove", function() {
+
+      })
+      .on("mouseout", function(d) {
+        d3.select(this)
+            .attr("fill", 'grey');
+        tool_tip.hide(d)
+      })
       .merge(bars) // get the already existing elements as well
       .transition() // and apply changes to all of them
       .duration(transitionTime)
@@ -261,7 +274,9 @@ function update(data) {
       .attr('y', (d) => yScale(d.gpa))
       .attr('width', xScale.bandwidth())
       .attr('height', (d) => height - yScale(d.gpa))
-      .call( param => console.log('adding bars'))
+      .call( () => console.log('adding bars'))
+      .attr("fill", "grey")
+      .attr("text", "test")
 
   bars
       .exit()
@@ -347,25 +362,32 @@ function imgToText(){
   Tesseract.setLogging(true);
 
   // start async function
-  work().then(result => {
-    // parse courses from text result
-    const courses = parseOCR(result.data.text, false);
+  work()
+      .then(result => {
+        // parse courses from text result
+        const courses = parseOCR(result.data.text, false);
 
-    // group courses into ordered semesters
-    const semesters_ordered = coursesToOrderedSemesters(courses);
+        // group courses into ordered semesters
+        const semesters_ordered = coursesToOrderedSemesters(courses);
 
-    // update chart
-    update(semesters_ordered);
+        // update chart
+        update(semesters_ordered);
 
-  }).finally(function(){
-    // once async function is done, reset button text, file name text and progress text
-    ocrBtn.innerText = "Draw chart";
-    document.getElementById("file-name-value").textContent = "";
-    document.getElementById("progress-value").textContent = "";
+      })
+      .catch(error => {
+        console.log(error);
+        alert('error during text recognition');
+      })
 
-    // also hide progress bar
-    $('#progress-bar').hide();
-  });
+      .finally(function(){
+        // once async function is done, reset button text, file name text and progress text
+        ocrBtn.innerText = "Draw chart";
+        document.getElementById("file-name-value").textContent = "";
+        document.getElementById("progress-value").textContent = "";
+
+        // also hide progress bar
+        $('#progress-bar').hide();
+      });
 
   async function work() {
     await worker.load();
@@ -468,8 +490,6 @@ function parseOCR(textResult, testingFlag) {
         "SP21 FAA102A 30 IP >l"
   }
 
-  //TODO: figure out why regex does not capture some courses
-  //TODO: switch to using actual OCR data once regex is fixed
   //console.log(textResult);
 
   const lines = textResult.split('\n');
@@ -483,13 +503,11 @@ function parseOCR(textResult, testingFlag) {
 
   // iterate through each text line
   for (let i = 0; i < lines.length; i++) {
-    console.log(lines[i]);
     // define empty course object
     const courseObj = {};
 
     // get regex matches
     const match = lines[i].match(pattern);
-    console.log(match);
 
     if (match != null) {
       // add object properties
@@ -656,4 +674,6 @@ function coursesToOrderedSemesters(data) {
   console.log(semesters_ordered);
 
   return semesters_ordered;
+
+  //TODO: for some reason, chart breaks when i return an array here (semesters and courses). figure out why.
 }

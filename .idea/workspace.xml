@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Started tooltip implementation.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Fixed new bar color and mouse events.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev/ocr" />
+        <entry key="$PROJECT_DIR$" value="dev/tooltip" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,8 +61,9 @@
       <list>
         <item itemvalue="Node.js.main.js" />
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Node.js.main.js" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -292,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609976609934</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Added feature to save chart as image.">
+      <created>1609976657493</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1609976657493</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,8 +331,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added Bootstrap nav bar." />
-    <MESSAGE value="Formatted chart creation and update code." />
     <MESSAGE value="Half implemented changing x axis; only changes on first redraw." />
     <MESSAGE value="Implemented changing x axis text content." />
     <MESSAGE value="Fixed cumulative GPA calculation and started cumulative GPA line updating feature." />
@@ -347,7 +354,9 @@
     <MESSAGE value="Added progress bar." />
     <MESSAGE value="Added comments." />
     <MESSAGE value="Started tooltip implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started tooltip implementation." />
+    <MESSAGE value="Added feature to save chart as image." />
+    <MESSAGE value="Fixed new bar color and mouse events." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed new bar color and mouse events." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
