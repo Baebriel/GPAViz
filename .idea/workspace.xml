@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Favicon works now.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Changed website title.">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,13 +94,6 @@
       <workItem from="1609459180165" duration="73000" />
       <workItem from="1609698414513" duration="9618000" />
       <workItem from="1610057601401" duration="1499000" />
-    </task>
-    <task id="LOCAL-00001" summary="Worked on parsing form data.">
-      <created>1608925452548</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1608925452548</updated>
     </task>
     <task id="LOCAL-00002" summary="Successfully obtained average GPA for each given semester.">
       <created>1608937129347</created>
@@ -438,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610141612905</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Changed website title.">
+      <created>1610141742340</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1610141742340</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +468,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Reworked OCR method and added progress logger." />
     <MESSAGE value="Better formatted code for regex testing." />
     <MESSAGE value="Added progress bar." />
     <MESSAGE value="Added comments." />
@@ -493,7 +492,8 @@
     <MESSAGE value="Added better favicon support." />
     <MESSAGE value="Added hidden text for testing." />
     <MESSAGE value="Favicon works now." />
-    <option name="LAST_COMMIT_MESSAGE" value="Favicon works now." />
+    <MESSAGE value="Changed website title." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed website title." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
