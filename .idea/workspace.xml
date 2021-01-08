@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added hidden text for testing.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Favicon works now.">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -432,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610140506289</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Favicon works now.">
+      <created>1610141612905</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1610141612905</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +468,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changed OCR method to get allow for progress monitoring." />
     <MESSAGE value="Reworked OCR method and added progress logger." />
     <MESSAGE value="Better formatted code for regex testing." />
     <MESSAGE value="Added progress bar." />
@@ -487,7 +492,8 @@
     <MESSAGE value="Added favicon." />
     <MESSAGE value="Added better favicon support." />
     <MESSAGE value="Added hidden text for testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added hidden text for testing." />
+    <MESSAGE value="Favicon works now." />
+    <option name="LAST_COMMIT_MESSAGE" value="Favicon works now." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
