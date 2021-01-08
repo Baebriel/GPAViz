@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added favicon.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added better favicon support.">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -417,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610139697644</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Added better favicon support.">
+      <created>1610139826957</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1610139826957</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +454,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved upload and buttons flow." />
     <MESSAGE value="Implemented OCR to recognize courses and draw chart." />
     <MESSAGE value="Changed OCR method to get allow for progress monitoring." />
     <MESSAGE value="Reworked OCR method and added progress logger." />
@@ -472,7 +478,8 @@
     <MESSAGE value="Restyled page and tried adding custom font to svg download." />
     <MESSAGE value="Changed styling and added 100 course cap." />
     <MESSAGE value="Added favicon." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added favicon." />
+    <MESSAGE value="Added better favicon support." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added better favicon support." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
