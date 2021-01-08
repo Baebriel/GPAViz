@@ -1,4 +1,4 @@
-// placeholder semester data to use in chart
+// placeholder semester data for initial chart
 const sample = [{
   semester: 'FA17',
   gpa: '3.19',
@@ -49,6 +49,7 @@ const sample = [{
   },
 ];
 
+// placeholder course data for initial chart
 let DATA = [
   {
     "semester": "FA17",
@@ -309,12 +310,8 @@ let DATA = [
 ];
 
 // ================ BEGIN CHART CREATION ========================
+
 // define constants
-
-const div = d3.select("#container").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
-
 const svg = d3.select('#chart');
 
 // create tooltip for columns
@@ -437,7 +434,7 @@ svg
     .attr('text-anchor', 'middle')
     .text('Semester')
 
-/*
+
 // add watermark
 svg
     .append('text')
@@ -447,7 +444,7 @@ svg
     .attr('text-anchor', 'middle')
     .style("fill", "grey")
     .text('baebriel.github.io/GPAViz')
- */
+
 
 // define line
 const line = d3.line()

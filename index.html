@@ -9,29 +9,20 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="js/d3-tip.js"></script>
     <script src="js/saveSvgAsPng.js"></script>
-    <link rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.min.css"> <!-- unload bootstrap if unnecessary -->
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.5.1.min.js"></script>
     <!-- <link href="../css/filepond.css" rel="stylesheet"> -->
   </head>
 
   <body>
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">GPAViz</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
+  <div class="header">
+    <a href="index.html" class="logo">GPAViz</a>
+    <div class="header-right">
+      <a class="active" href="index.html">Home</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
     </div>
-  </nav>
-
-  <!-- line break after nav bar -->
-  <br style="clear:both" />
+  </div>
 
   <main>
     <div id='layout'>
@@ -90,7 +81,7 @@
       <!-- include tesseract -->
       <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
       <div id="upload">
-        <h4>...or, upload a screenshot of the 'summary of courses taken' section of your DARS report</h4>
+        <h4>...or, upload a screenshot of the 'summary of courses taken' in your UIUC DARS report</h4>
         <table>
           <tr>
             <td><button id="file-input-redirect" onclick="document.getElementById('file-input').click()">Choose file</button></td>
