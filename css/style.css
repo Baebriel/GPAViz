@@ -1,15 +1,16 @@
 div#layout {
   width: 1366px;
-  height: 768px;
-  background: #d0d6d1;
+  /*height: 768px;*/
+  height: auto;
+  /*background: #d0d6d1;*/
+  margin: auto;
 }
 
 div#container {
   width: 1000px;
   height: 600px;
   margin: auto;
-  background: #e3e6cf;
-  float: left;
+  background-color: #DBD8D8;
 }
 
 svg {
@@ -24,12 +25,19 @@ svg {
   stroke-width: 3;
 }
 
-div#courseDiv {
+div#input-and-upload {
+  width: 100%;
+  display: block;
+  overflow: auto;
+  /*background-color: #4f4f4f;*/
+}
+
+div#manual {
   text-align: left;
   /*background: rosybrown;*/
   float: left;
   padding: 5px;
-  width: 600px;
+  /*width: 600px;*/
   border-right: 2px solid black;
 }
 
@@ -48,10 +56,6 @@ footer {
   background-color: antiquewhite;
   float: bottom;
   padding: 5px;
-}
-
-.active {
-  background-color: #4CAF50;
 }
 
 .remove {
@@ -113,6 +117,9 @@ th, td {
     display:block;
     width:100%;
     float:left;
+  }
+  div#manual {
+    border: none;
   }
 }
 
@@ -176,7 +183,7 @@ th, td {
 }
 
 body {
-  margin: 0px;
+  margin: 0;
 }
 
 html *
