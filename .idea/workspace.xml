@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Changed location of note and added tip for mouseover tooltips.">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added padding for tip.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610070070334</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Added padding for tip.">
+      <created>1610070178331</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1610070178331</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +413,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Started implementing OCR." />
     <MESSAGE value="Moved index.html for Github Pages hosting." />
     <MESSAGE value="Undid moving index.html." />
     <MESSAGE value="Replaced local d3.js source with CDN." />
@@ -430,7 +437,8 @@
     <MESSAGE value="Added note for OCR screenshot." />
     <MESSAGE value="Spelling." />
     <MESSAGE value="Changed location of note and added tip for mouseover tooltips." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed location of note and added tip for mouseover tooltips." />
+    <MESSAGE value="Added padding for tip." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added padding for tip." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

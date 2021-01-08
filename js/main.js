@@ -204,7 +204,7 @@ let DATA = [
   },
   {
     "semester": "FA19",
-    "course": "AE311",
+    "course": "AE 311",
     "hours": 3,
     "grade": "A",
     "gpa": 4,
@@ -212,7 +212,7 @@ let DATA = [
   },
   {
     "semester": "FA19",
-    "course": "AE321",
+    "course": "AE 321",
     "hours": 3,
     "grade": "B-",
     "gpa": 2.67,
@@ -236,7 +236,7 @@ let DATA = [
   },
   {
     "semester": "FA19",
-    "course": "JS212",
+    "course": "JS 212",
     "hours": 3,
     "grade": "B+",
     "gpa": 3.33,
@@ -260,7 +260,7 @@ let DATA = [
   },
   {
     "semester": "FA20",
-    "course": "AE433",
+    "course": "AE 433",
     "hours": 3,
     "grade": "B+",
     "gpa": 3.33,
