@@ -309,6 +309,13 @@ let DATA = [
   }
 ];
 
+// define colors to be used for bars and lines
+const BAR_COLOR = "#73B0D7";
+const BAR_HL_COLOR = "#69A0C4";
+const LINE_COLOR = "#ED7D31";
+const LINE_HL_COLOR = "#C96A29";
+
+
 // ================ BEGIN CHART CREATION ========================
 
 // define constants
@@ -396,13 +403,13 @@ bars
     .attr('height', (d) => height - yScale(d.gpa))
     .attr('width', xScale.bandwidth())
     //.call(() => console.log('creating initial bars'))
-    .attr("fill", 'grey')
+    .attr("fill", BAR_COLOR)
 
 // mouse events
 bars
     .on("mouseover", function(d) {
       d3.select(this)
-          .attr("fill", "#636363");
+          .attr("fill", BAR_HL_COLOR);
       tool_tip.show(d)
     })
     .on("mousemove", function() {
@@ -410,7 +417,7 @@ bars
     })
     .on("mouseout", function(d) {
       d3.select(this)
-          .attr("fill", 'grey');
+          .attr("fill", BAR_COLOR);
       tool_tip.hide(d)
     })
 
@@ -455,6 +462,9 @@ const line = d3.line()
 chart.append("path")
     .data(sample)
     .attr("class", "line")
+    .attr("fill", "none")
+    .style("stroke", LINE_COLOR)
+    .attr("stroke-width", 2)
     .attr("d", line(sample))
 
 // add points on line
@@ -466,15 +476,15 @@ chart.selectAll(".point")
     .attr("cx", function(d) { return xScale(d.semester) + xScale.bandwidth() / 2 } )
     .attr("cy", function(d) { return yScale(d.cumulative) } )
     .attr("r", 5)
-    .attr("fill", "red")
+    .attr("fill", LINE_COLOR)
     .on("mouseover", function(d) {
       d3.select(this)
-          .attr("fill", "#D10000");
+          .attr("fill", LINE_HL_COLOR);
       cum_tip.show(d)
     })
     .on("mouseout", function(d) {
       d3.select(this)
-          .attr("fill", "red");
+          .attr("fill", LINE_COLOR);
       cum_tip.hide(d)
     })
 
@@ -484,10 +494,15 @@ chart.selectAll(".point")
 
 // add course
 $(".add").on("click", function() {
-  const clone = $("form > p:first-child").clone(true);
-  clone.find('input').val('');
-  clone.insertBefore("form > p:last-child");
-  return false;
+  const count = document.getElementById("myForm").childElementCount;
+  if (count > 100) {
+    alert('Cannot have more than 100 courses.')
+  } else {
+    const clone = $("form > p:first-child").clone(true);
+    clone.find('input').val('');
+    clone.insertBefore("form > p:last-child");
+    return false;
+  }
 });
 
 // remove course
@@ -552,7 +567,7 @@ function update(data) {
       .attr('class', 'bar')
       .on("mouseover", function(d) {
         d3.select(this)
-            .attr("fill", "#636363");
+            .attr("fill", BAR_HL_COLOR);
         tool_tip.show(d)
       })
       .on("mousemove", function() {
@@ -560,7 +575,7 @@ function update(data) {
       })
       .on("mouseout", function(d) {
         d3.select(this)
-            .attr("fill", 'grey');
+            .attr("fill", BAR_COLOR);
         tool_tip.hide(d)
       })
       .merge(bars) // get the already existing elements as well
@@ -571,7 +586,7 @@ function update(data) {
       .attr('width', xScale.bandwidth())
       .attr('height', (d) => height - yScale(d.gpa))
       //.call( () => console.log('adding bars'))
-      .attr("fill", "grey")
+      .attr("fill", BAR_COLOR)
       .attr("text", "test")
 
   bars
@@ -600,6 +615,7 @@ function update(data) {
   // update points
   const points = chart.selectAll(".point")
       .data(data)
+      .raise()
 
   points
       .enter()
@@ -607,12 +623,12 @@ function update(data) {
       .attr("class", "point")
       .on("mouseover", function(d) {
         d3.select(this)
-            .attr("fill", "#D10000");
+            .attr("fill", LINE_HL_COLOR);
         cum_tip.show(d)
       })
       .on("mouseout", function(d) {
         d3.select(this)
-            .attr("fill", "red");
+            .attr("fill", LINE_COLOR);
         cum_tip.hide(d)
       })
       .merge(points)
@@ -621,7 +637,7 @@ function update(data) {
       .attr("cx", function(d) { return xScale(d.semester) + xScale.bandwidth() / 2 } )
       .attr("cy", function(d) { return yScale(d.cumulative) } )
       .attr("r", 5)
-      .attr("fill", "red")
+      .attr("fill", LINE_COLOR)
 
   points
       .exit()

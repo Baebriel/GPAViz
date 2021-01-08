@@ -10,7 +10,7 @@ div#container {
   width: 1000px;
   height: 600px;
   margin: auto;
-  background-color: #DBD8D8;
+  background-color: #EEEEEE;
 }
 
 svg {
@@ -125,7 +125,7 @@ th, td {
 
 #download {
   float: left;
-  margin: 15px;
+  margin: 5px;
 }
 
 /* Style the header with a grey background and some padding */
