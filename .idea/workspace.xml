@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Made small changes.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added note for OCR screenshot.">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -355,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610068679211</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Added note for OCR screenshot.">
+      <created>1610069413765</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1610069413765</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +391,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed line appearing behind bars." />
     <MESSAGE value="Replaced deprecated click event listeners." />
     <MESSAGE value="Replaced deprecated click event listeners v2." />
     <MESSAGE value="Started implementing OCR." />
@@ -410,7 +415,8 @@
     <MESSAGE value="Added optional watermark." />
     <MESSAGE value="Slightly restyled index.html and added a little responsive design." />
     <MESSAGE value="Made small changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made small changes." />
+    <MESSAGE value="Added note for OCR screenshot." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added note for OCR screenshot." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
