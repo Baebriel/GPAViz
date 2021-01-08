@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Spelling.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Changed location of note and added tip for mouseover tooltips.">
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -368,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610069828368</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Changed location of note and added tip for mouseover tooltips.">
+      <created>1610070070334</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1610070070334</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +405,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Replaced deprecated click event listeners v2." />
     <MESSAGE value="Started implementing OCR." />
     <MESSAGE value="Moved index.html for Github Pages hosting." />
     <MESSAGE value="Undid moving index.html." />
@@ -423,7 +429,8 @@
     <MESSAGE value="Made small changes." />
     <MESSAGE value="Added note for OCR screenshot." />
     <MESSAGE value="Spelling." />
-    <option name="LAST_COMMIT_MESSAGE" value="Spelling." />
+    <MESSAGE value="Changed location of note and added tip for mouseover tooltips." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed location of note and added tip for mouseover tooltips." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
