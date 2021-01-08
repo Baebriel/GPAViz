@@ -449,7 +449,7 @@ svg
     .attr('x', width * 0.9 + margin)
     .attr('y', height + margin * 1.7)
     .attr('text-anchor', 'middle')
-    .style("fill", "grey")
+    .style("fill", "#C1C1C1")
     .text('baebriel.github.io/GPAViz')
 
 

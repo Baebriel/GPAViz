@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Restyled page and tried adding custom font to svg download.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Changed styling and added 100 course cap.">
+      <change afterPath="$PROJECT_DIR$/favicon_io/android-chrome-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon_io/android-chrome-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon_io/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon_io/favicon-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon_io/favicon-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon_io/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon_io/site.webmanifest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -405,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610135799439</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Changed styling and added 100 course cap.">
+      <created>1610138122797</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1610138122797</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +449,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Restructured project for Github Pages hosting." />
     <MESSAGE value="Implemented OCR to recognize text from uploaded file." />
     <MESSAGE value="Improved upload and buttons flow." />
     <MESSAGE value="Implemented OCR to recognize courses and draw chart." />
@@ -460,7 +473,8 @@
     <MESSAGE value="Edited course tooltip format for placeholder data." />
     <MESSAGE value="Removed bootstrap and made stylistic changes." />
     <MESSAGE value="Restyled page and tried adding custom font to svg download." />
-    <option name="LAST_COMMIT_MESSAGE" value="Restyled page and tried adding custom font to svg download." />
+    <MESSAGE value="Changed styling and added 100 course cap." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed styling and added 100 course cap." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
