@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added optional watermark.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Slightly restyled index.html and added a little responsive design.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610063282411</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Slightly restyled index.html and added a little responsive design.">
+      <created>1610067081643</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1610067081643</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +380,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed bars being added to wrong element and therefore being placed too high." />
     <MESSAGE value="Fixed line transition." />
     <MESSAGE value="Fixed line appearing behind bars." />
     <MESSAGE value="Replaced deprecated click event listeners." />
@@ -397,7 +404,8 @@
     <MESSAGE value="Added tooltip for cumulative gpa line." />
     <MESSAGE value="Added correct update behaviour for cumulative gpa tooltips." />
     <MESSAGE value="Added optional watermark." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added optional watermark." />
+    <MESSAGE value="Slightly restyled index.html and added a little responsive design." />
+    <option name="LAST_COMMIT_MESSAGE" value="Slightly restyled index.html and added a little responsive design." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

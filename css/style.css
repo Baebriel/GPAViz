@@ -47,6 +47,7 @@ input {
 footer {
   background-color: antiquewhite;
   float: bottom;
+  padding: 5px;
 }
 
 .active {
@@ -113,4 +114,9 @@ th, td {
     width:100%;
     float:left;
   }
+}
+
+#download {
+  float: left;
+  margin: 15px;
 }

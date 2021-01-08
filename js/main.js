@@ -494,7 +494,6 @@ $(".add").on("click", function() {
 });
 
 // remove course
-//TODO: add button to clear all course (except first course for add()/clone() to work)
 $(".remove").on("click",function() {
   const count = document.getElementById("myForm").childElementCount;
   if (count > 2) {
@@ -697,6 +696,8 @@ function imgToText(){
         // parse courses from text result
         const courses = parseOCR(result.data.text, false);
 
+        console.log(courses);
+
         // group courses into ordered semesters
         const semesters_ordered = coursesToOrderedSemesters(courses);
 
@@ -858,6 +859,7 @@ function parseOCR(textResult, testingFlag) {
       courses.push(courseObj);
     }
   }
+  console.log(courses);
   return courses;
 }
 
