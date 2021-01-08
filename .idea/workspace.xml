@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Slightly restyled index.html and added a little responsive design.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Made small changes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -350,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610067081643</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Made small changes.">
+      <created>1610068679211</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1610068679211</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +385,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed line transition." />
     <MESSAGE value="Fixed line appearing behind bars." />
     <MESSAGE value="Replaced deprecated click event listeners." />
     <MESSAGE value="Replaced deprecated click event listeners v2." />
@@ -405,7 +409,8 @@
     <MESSAGE value="Added correct update behaviour for cumulative gpa tooltips." />
     <MESSAGE value="Added optional watermark." />
     <MESSAGE value="Slightly restyled index.html and added a little responsive design." />
-    <option name="LAST_COMMIT_MESSAGE" value="Slightly restyled index.html and added a little responsive design." />
+    <MESSAGE value="Made small changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made small changes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
