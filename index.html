@@ -38,6 +38,7 @@
 
       <!-- course inputs -->
       <div id='courseDiv'>
+        <h4>Please manually enter your courses...</h4>
         <form id='myForm'>
           <p>
             <label for="semester">Semester:</label> <select name="semester" id="semester">
@@ -89,8 +90,7 @@
       <!-- include tesseract -->
       <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
       <div id="upload">
-        <p>or, upload a screenshot of the 'SUMMARY OF COURSES TAKEN' section of your DARS report.</p>
-
+        <h4>...or, upload a screenshot of the 'summary of courses taken' section of your DARS report</h4>
         <table>
           <tr>
             <td><button id="file-input-redirect" onclick="document.getElementById('file-input').click()">Choose file</button></td>

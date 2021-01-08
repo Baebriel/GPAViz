@@ -26,8 +26,18 @@ svg {
 
 div#courseDiv {
   text-align: left;
-  background: rosybrown;
+  /*background: rosybrown;*/
   float: left;
+  padding: 5px;
+  width: 600px;
+  border-right: 2px solid black;
+}
+
+div#upload {
+  left: 50%;
+  float: left;
+  /*background-color: #ABEBFF;*/
+  padding: 5px 5px 5px 15px;
 }
 
 input {
@@ -45,13 +55,6 @@ footer {
 
 .remove {
   margin-left: 10px;
-}
-
-div#upload {
-  position: absolute;
-  left: 50%;
-  float: left;
-  background-color: #1b6d85;
 }
 
 #file-input-redirect, #file-name-label {
@@ -104,3 +107,10 @@ th, td {
   left: 0;
 }
 
+@media (max-width: 1366px) {
+  div#upload {
+    display:block;
+    width:100%;
+    float:left;
+  }
+}
