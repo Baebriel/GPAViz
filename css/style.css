@@ -1,121 +1,13 @@
-div#layout {
-  width: 1366px;
-  /*height: 768px;*/
-  height: auto;
-  /*background: #d0d6d1;*/
-  margin: auto;
+/* #################### main html section attributes ##################### */
+
+body {
+  margin: 0;
 }
 
-div#container {
-  width: 1000px;
-  height: 600px;
-  margin: auto;
-  background-color: #EEEEEE;
-}
-
-svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* line attributes */
-.line {
-  stroke: red;
-  fill: none;
-  stroke-width: 3;
-}
-
-div#input-and-upload {
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  /*background-color: #4f4f4f;*/
-}
-
-div#manual {
-  text-align: left;
-  /*background: rosybrown;*/
-  float: left;
-  padding: 5px;
-  /*width: 600px;*/
-  border-right: 2px solid black;
-}
-
-div#upload {
-  left: 50%;
-  float: left;
-  /*background-color: #ABEBFF;*/
-  padding: 5px 5px 5px 15px;
-  width: 650px;
-}
-
-input {
-  width: 10%;
-}
-
-footer {
-  background-color: antiquewhite;
-  float: bottom;
-  padding: 5px;
-}
-
-.remove {
-  margin-left: 10px;
-}
-
-#file-input-redirect, #file-name-label {
-  display: inline-block;
-}
-
-#img-to-text, #progress-label {
-  display: inline-block;
-}
-
-th, td {
-  padding: 3px;
-  text-align: left;
-}
-
-#file-input-redirect, #img-to-text {
-  width: 90px;
-}
-
-#progress-bar {
-  display: none;
-}
-
-.d3-tip {
-  line-height: 1;
-  padding: 6px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 4px;
-  font-size: 12px;
-}
-
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
-}
-
-/* Style northward tooltips specifically */
-.d3-tip.n:after {
-  margin: -2px 0 0 0;
-  top: 100%;
-  left: 0;
-}
-
-#download {
-  float: left;
-  margin: 5px;
+/*change font for entire page */
+html *
+{
+  font-family: Arial, sans-serif !important;
 }
 
 /* Style the header with a grey background and some padding */
@@ -160,7 +52,107 @@ th, td {
   float: right;
 }
 
-/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+main {
+  width: 1366px;
+  /*height: 768px;*/
+  height: auto;
+  background: #d0d6d1;
+  margin: auto;
+  padding-bottom: 2.5rem;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  height: 2.5rem;
+  background-color: #F1F1F1;
+  padding: 10px;
+}
+
+/* #################### smaller sections ##################### */
+div#chart-container {
+  width: 1000px;
+  height: auto;
+  margin: auto;
+  background-color: #EEEEEE;
+}
+
+div#input-and-upload {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  /*background-color: #4f4f4f;*/
+}
+
+div#manual {
+  text-align: left;
+  /*background: rosybrown;*/
+  float: left;
+  padding: 5px;
+  /*width: 600px;*/
+  border-right: 2px solid black;
+}
+
+div#upload {
+  left: 50%;
+  float: left;
+  /*background-color: #ABEBFF;*/
+  padding: 5px 5px 5px 15px;
+  width: 650px;
+}
+
+th, td {
+  padding: 3px;
+  text-align: left;
+}
+
+#progress-bar {
+  display: none;
+}
+
+/* #################### graph stuff ##################### */
+.line {
+  stroke: red;
+  fill: none;
+  stroke-width: 3;
+}
+
+svg {
+  width: 100%;
+  height: 600px;
+}
+
+/* #################### tooltip html divs ##################### */
+.d3-tip {
+  line-height: 1;
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips specifically */
+.d3-tip.n:after {
+  margin: -2px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+/* #################### media queries ##################### */
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
@@ -184,15 +176,7 @@ th, td {
   }
 }
 
-body {
-  margin: 0;
-}
-
-html *
-{
-  font-family: Arial, sans-serif !important;
-}
-
+/* #################### buttons and inputs ##################### */
 .draw, .append {
   margin: 5px;
 }
@@ -201,6 +185,27 @@ html *
   margin: 5px 5px 5px 0;
 }
 
-.append {
-  /*float: right;*/
+#download {
+  float: left;
+  margin: 5px;
+}
+
+input {
+  width: 10%;
+}
+
+.remove {
+  margin-left: 10px;
+}
+
+#file-input-redirect, #file-name-label {
+  display: inline-block;
+}
+
+#img-to-text, #progress-label {
+  display: inline-block;
+}
+
+#file-input-redirect, #img-to-text {
+  width: 90px;
 }

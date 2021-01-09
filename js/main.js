@@ -315,6 +315,11 @@ const BAR_HL_COLOR = "#69A0C4";
 const LINE_COLOR = "#ED7D31";
 const LINE_HL_COLOR = "#C96A29";
 
+//TODO:
+// 1. add custom footer, maybe include disclaimer about data
+// 2. refactor html layout to make footer work
+// 3. decide what to do about nav bar
+// 4. see if I can add Arial font to graph image download
 
 // ================ BEGIN CHART CREATION ========================
 
@@ -770,8 +775,8 @@ function imgToText(){
 d3.select("#download")
     .on('click', function(){
       // Get the d3js SVG element and save using saveSvgAsPng.js
-      saveSvgAsPng(document.getElementsByTagName("svg")[0], "plot.png", {
-        scale: 1,
+      saveSvgAsPng(document.getElementsByTagName("svg")[0], "GPAViz.png", {
+        scale: 2,
         backgroundColor: "#FFFFFF",
         fonts: [
           {

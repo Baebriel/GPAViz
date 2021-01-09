@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added state reset to file upload upon chart update completion.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Fixed progress bar shifting other content down.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,13 +97,6 @@
       <workItem from="1609459180165" duration="73000" />
       <workItem from="1609698414513" duration="9618000" />
       <workItem from="1610057601401" duration="1499000" />
-    </task>
-    <task id="LOCAL-00008" summary="Formatted chart creation and update code.">
-      <created>1609089442231</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1609089442231</updated>
     </task>
     <task id="LOCAL-00009" summary="Half implemented changing x axis; only changes on first redraw.">
       <created>1609108546360</created>
@@ -439,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610215203569</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Fixed progress bar shifting other content down.">
+      <created>1610215638083</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1610215638090</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +471,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Made progress on bar chart tooltips." />
     <MESSAGE value="Added tooltip for cumulative gpa line." />
     <MESSAGE value="Added correct update behaviour for cumulative gpa tooltips." />
     <MESSAGE value="Added optional watermark." />
@@ -494,7 +495,8 @@
     <MESSAGE value="Fixed page look and responsiveness." />
     <MESSAGE value="Fixed note." />
     <MESSAGE value="Added state reset to file upload upon chart update completion." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added state reset to file upload upon chart update completion." />
+    <MESSAGE value="Fixed progress bar shifting other content down." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed progress bar shifting other content down." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
