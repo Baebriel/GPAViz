@@ -28,7 +28,7 @@ svg {
 div#input-and-upload {
   width: 100%;
   display: block;
-  overflow: auto;
+  overflow: hidden;
   /*background-color: #4f4f4f;*/
 }
 
@@ -44,7 +44,7 @@ div#manual {
 div#upload {
   left: 50%;
   float: left;
-  background-color: #ABEBFF;
+  /*background-color: #ABEBFF;*/
   padding: 5px 5px 5px 15px;
   width: 650px;
 }
@@ -113,17 +113,6 @@ th, td {
   left: 0;
 }
 
-@media (max-width: 1366px) {
-  div#upload {
-    display:block;
-    width:100%;
-    float:left;
-  }
-  div#manual {
-    border: none;
-  }
-}
-
 #download {
   float: left;
   margin: 5px;
@@ -183,6 +172,18 @@ th, td {
   }
 }
 
+@media (max-width: 1366px) {
+  div#upload {
+    display:block;
+    /*width:650px;*/
+    float:none;
+  }
+  div#manual {
+    border: none;
+    float: none;
+  }
+}
+
 body {
   margin: 0;
 }
@@ -190,4 +191,16 @@ body {
 html *
 {
   font-family: Arial, sans-serif !important;
+}
+
+.draw, .append {
+  margin: 5px;
+}
+
+.add {
+  margin: 5px 5px 5px 0;
+}
+
+.append {
+  /*float: right;*/
 }
