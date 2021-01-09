@@ -44,8 +44,9 @@ div#manual {
 div#upload {
   left: 50%;
   float: left;
-  /*background-color: #ABEBFF;*/
+  background-color: #ABEBFF;
   padding: 5px 5px 5px 15px;
+  width: 650px;
 }
 
 input {

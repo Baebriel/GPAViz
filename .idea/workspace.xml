@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Removed hidden text.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added Google Analytics tracking.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,13 +97,6 @@
       <workItem from="1609459180165" duration="73000" />
       <workItem from="1609698414513" duration="9618000" />
       <workItem from="1610057601401" duration="1499000" />
-    </task>
-    <task id="LOCAL-00003" summary="Implemented bar chart update event.">
-      <created>1608938347035</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1608938347035</updated>
     </task>
     <task id="LOCAL-00004" summary="Testing Github login.">
       <created>1608938564063</created>
@@ -439,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610141785877</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Added Google Analytics tracking.">
+      <created>1610164077878</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1610164077878</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +471,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added progress bar." />
     <MESSAGE value="Added comments." />
     <MESSAGE value="Started tooltip implementation." />
     <MESSAGE value="Added feature to save chart as image." />
@@ -494,7 +495,8 @@
     <MESSAGE value="Favicon works now." />
     <MESSAGE value="Changed website title." />
     <MESSAGE value="Removed hidden text." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed hidden text." />
+    <MESSAGE value="Added Google Analytics tracking." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Google Analytics tracking." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

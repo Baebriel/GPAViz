@@ -515,9 +515,18 @@ $(".remove").on("click",function() {
   }
 });
 
-// save form and draw chart
-$( ".draw" ).on("click",function() {
+// draw chart from scratch
+$( ".draw" ).on("click", function() {
+    drawHandler(false);
+});
 
+// append data to graph
+$(".append").on("click", function() {
+  drawHandler(true)
+});
+
+// get and parse form data
+function drawHandler(append) {
   // parse form data into JS object of same structure as data object
   const formData = $( '#myForm' ).serializeArray();
   const numFields = 4;
@@ -534,14 +543,19 @@ $( ".draw" ).on("click",function() {
     newData.push(newObject);
   }
 
-  // call function to format data into courses grouped by semester to plot
-  const semesters_ordered = coursesToOrderedSemesters(newData);
+  if (append) {
+    newData.forEach(course => DATA.push(course));
+  } else {
+    DATA = newData;
+  }
+  console.log(newData);
 
-  DATA = newData;
+  // call function to format data into courses grouped by semester to plot
+  const semesters_ordered = coursesToOrderedSemesters(DATA);
 
   // update chart
   update(semesters_ordered);
-});
+}
 
 // function to update chart (only bar for now)
 function update(data) {
