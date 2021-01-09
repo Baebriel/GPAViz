@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Changed website title.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Removed hidden text.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +45,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -94,13 +95,6 @@
       <workItem from="1609459180165" duration="73000" />
       <workItem from="1609698414513" duration="9618000" />
       <workItem from="1610057601401" duration="1499000" />
-    </task>
-    <task id="LOCAL-00002" summary="Successfully obtained average GPA for each given semester.">
-      <created>1608937129347</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1608937129347</updated>
     </task>
     <task id="LOCAL-00003" summary="Implemented bar chart update event.">
       <created>1608938347035</created>
@@ -438,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610141742340</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Removed hidden text.">
+      <created>1610141785877</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1610141785877</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +469,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Better formatted code for regex testing." />
     <MESSAGE value="Added progress bar." />
     <MESSAGE value="Added comments." />
     <MESSAGE value="Started tooltip implementation." />
@@ -493,7 +493,8 @@
     <MESSAGE value="Added hidden text for testing." />
     <MESSAGE value="Favicon works now." />
     <MESSAGE value="Changed website title." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed website title." />
+    <MESSAGE value="Removed hidden text." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed hidden text." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
