@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added feature allowing user to add courses to existing graph.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Fixed page look and responsiveness.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,13 +95,6 @@
       <workItem from="1609459180165" duration="73000" />
       <workItem from="1609698414513" duration="9618000" />
       <workItem from="1610057601401" duration="1499000" />
-    </task>
-    <task id="LOCAL-00005" summary="Added Contact and About pages.">
-      <created>1608997916433</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1608997916433</updated>
     </task>
     <task id="LOCAL-00006" summary="Removed input text upon 'add' and added fadeout on 'remove'.">
       <created>1609003328727</created>
@@ -440,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610213933182</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Fixed page look and responsiveness.">
+      <created>1610214747189</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1610214747198</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +469,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Started tooltip implementation." />
     <MESSAGE value="Added feature to save chart as image." />
     <MESSAGE value="Fixed new bar color and mouse events." />
     <MESSAGE value="Made progress on bar chart tooltips." />
@@ -495,7 +493,8 @@
     <MESSAGE value="Removed hidden text." />
     <MESSAGE value="Added Google Analytics tracking." />
     <MESSAGE value="Added feature allowing user to add courses to existing graph." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added feature allowing user to add courses to existing graph." />
+    <MESSAGE value="Fixed page look and responsiveness." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed page look and responsiveness." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
