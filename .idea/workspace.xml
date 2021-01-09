@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Fixed page look and responsiveness.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Fixed note.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,13 +95,6 @@
       <workItem from="1609459180165" duration="73000" />
       <workItem from="1609698414513" duration="9618000" />
       <workItem from="1610057601401" duration="1499000" />
-    </task>
-    <task id="LOCAL-00006" summary="Removed input text upon 'add' and added fadeout on 'remove'.">
-      <created>1609003328727</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1609003328727</updated>
     </task>
     <task id="LOCAL-00007" summary="Added Bootstrap nav bar.">
       <created>1609088969904</created>
@@ -439,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610214747198</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Fixed note.">
+      <created>1610214832760</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1610214832763</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +469,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added feature to save chart as image." />
     <MESSAGE value="Fixed new bar color and mouse events." />
     <MESSAGE value="Made progress on bar chart tooltips." />
     <MESSAGE value="Added tooltip for cumulative gpa line." />
@@ -494,7 +493,8 @@
     <MESSAGE value="Added Google Analytics tracking." />
     <MESSAGE value="Added feature allowing user to add courses to existing graph." />
     <MESSAGE value="Fixed page look and responsiveness." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed page look and responsiveness." />
+    <MESSAGE value="Fixed note." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed note." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

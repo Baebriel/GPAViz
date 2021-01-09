@@ -711,6 +711,7 @@ function imgToText(){
       if ('progress' in m) {
         // update progress bar
         document.getElementById("progress-bar").value = Math.floor(parseFloat(m.progress) * 100);
+        //TODO: fix progress bar shifting content down
     }
   }});
 
@@ -744,6 +745,7 @@ function imgToText(){
         ocrBtn.innerText = "Draw chart";
         document.getElementById("file-name-value").textContent = "";
         document.getElementById("progress-value").textContent = "";
+        document.getElementById("file-input").value = "";
 
         // also hide progress bar
         $('#progress-bar').hide();
