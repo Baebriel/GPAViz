@@ -29,14 +29,14 @@ const sample = [{
     gpa: '3.60',
     cumulative: '3.08'
   },
-    /*
-  {
-    semester: 'SP20',
-    gpa: '0.00',
-    cumulative: '3.08'
-  },
+  /*
+{
+  semester: 'SP20',
+  gpa: '0.00',
+  cumulative: '3.08'
+},
 
-     */
+   */
   {
     semester: 'SU20',
     gpa: '3.24',
@@ -316,18 +316,7 @@ const LINE_COLOR = "#ED7D31";
 const LINE_HL_COLOR = "#C96A29";
 
 //TODO:
-// 1. add custom footer, maybe include disclaimer about data
-// 2. refactor html layout to make footer work
-// 3. decide what to do about nav bar
-// 4. see if I can add Arial font to graph image download
-
-// copyright year stuff
-// const date = new Date();
-// const year = date.getFullYear();
-//
-// window.onload = () => {
-//   document.getElementById("copyright").textContent = "&copy; Copyright  " + year + " Gabriel Aaron. All Rights Reserved";
-// }
+// 1. decide what to do about nav bar
 
 // ================ BEGIN CHART CREATION ========================
 
@@ -530,7 +519,7 @@ $(".remove").on("click",function() {
 
 // draw chart from scratch
 $( ".draw" ).on("click", function() {
-    drawHandler(false);
+  drawHandler(false);
 });
 
 // append data to graph
@@ -724,9 +713,8 @@ function imgToText(){
       if ('progress' in m) {
         // update progress bar
         document.getElementById("progress-bar").value = Math.floor(parseFloat(m.progress) * 100);
-        //TODO: fix progress bar shifting content down
-    }
-  }});
+      }
+    }});
 
   // enable Tesseract logging
   Tesseract.setLogging(true);
@@ -780,21 +768,13 @@ function imgToText(){
   }
 }
 
-d3.select("#download")
-    .on('click', function(){
-      // Get the d3js SVG element and save using saveSvgAsPng.js
-      saveSvgAsPng(document.getElementsByTagName("svg")[0], "GPAViz.png", {
-        scale: 2,
-        backgroundColor: "#FFFFFF",
-        fonts: [
-          {
-            url: 'https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2',
-            format: 'application/font-woff2',
-            text: "@font-face {font-family: 'Roboto';  font-style: normal;  font-weight: 400; src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}",
-          }
-        ]
-      });
-    })
+$("#download").on('click', function(){
+  // Get the SVG element and save using saveSvgAsPng.js
+  saveSvgAsPng(document.getElementsByTagName("svg")[0], "GPAViz.png", {
+    scale: 2,
+    backgroundColor: "#FFFFFF",
+  });
+})
 
 /**
  * Parse data from OCR
@@ -877,7 +857,7 @@ function parseOCR(textResult, testingFlag) {
   const lines = textResult.split('\n');
 
   // https://regex101.com/r/LM2l3f/1/
-  const pattern = /(?<semester>^[A-Z]{2,3}[0-9]{2}) *(?<course>[A-Z]{2,4} *[0-9\-]{3}).*(?<hours>[0-9][\.]?[0-9]{1,2}) (?<grade>[ABCDF][+-]?)($| *>R)/;
+  const pattern = /(?<semester>^[A-Z]{2,3}[0-9]{2}) *(?<course>[A-Z]{2,4} *[0-9\-]{3}).*(?<hours>[0-9][.]?[0-9]{1,2}) (?<grade>[ABCDF][+-]?)($| *>R)/;
 
   // define course object array
   const courses = [];

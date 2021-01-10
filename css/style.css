@@ -72,11 +72,13 @@ footer {
   horiz-align: center;
   width: 100%;
   margin: 0 auto;
+  padding: 0 0 10px 0;
 }
 
 #footer-links {
   text-align: center;
   /*background-color: #c44e47;*/
+  margin: 15px 0 10px 0;
 }
 
 #privacy-policy {
@@ -124,7 +126,7 @@ div#upload {
 }
 
 th, td {
-  padding: 3px;
+  padding: 3px 3px 3px 0;
   text-align: left;
 }
 
