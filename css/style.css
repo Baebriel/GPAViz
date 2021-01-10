@@ -56,7 +56,7 @@ main {
   width: 1366px;
   /*height: 768px;*/
   height: auto;
-  background: #d0d6d1;
+  /*background: #d0d6d1;*/
   margin: auto;
   padding-bottom: 2.5rem;
 }
@@ -64,9 +64,31 @@ main {
 footer {
   position: relative;
   bottom: 0;
-  height: 2.5rem;
+  /*height: 2.5rem;*/
   background-color: #F1F1F1;
-  padding: 10px;
+  /*padding: 10px;*/
+  display: inline-block;
+  text-align: center;
+  horiz-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#footer-links {
+  text-align: center;
+  /*background-color: #c44e47;*/
+}
+
+#privacy-policy {
+  width: 104px;
+  height: 20px;
+  display: block;
+  /*background-color: #c44e47;*/
+  margin: 10px auto;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
 }
 
 /* #################### smaller sections ##################### */
@@ -202,10 +224,10 @@ input {
   display: inline-block;
 }
 
-#img-to-text, #progress-label {
+#draw-ocr, #progress-label {
   display: inline-block;
 }
 
-#file-input-redirect, #img-to-text {
+#file-input-redirect, #draw-ocr {
   width: 90px;
 }

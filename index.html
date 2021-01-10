@@ -110,7 +110,7 @@
         </tr>
 
         <tr>
-          <td><button id="img-to-text">Draw chart</button></td>
+          <td><button id="draw-ocr">Draw chart</button></td>
           <td><div id="progress-label">Progress: </div></td>
           <td style="width: 250px"><div id="progress-value"></div></td>
           <td><progress id="progress-bar" value="32" max="100"></progress></td>
@@ -135,7 +135,31 @@
 
 <!-- footer -->
 <footer>
-  footer
+  <p id="footer-links">
+    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/gabriel-aaron-329561146">
+      <img src="linkedin_icon_20px.png" style="width: 20px; height: 20px">
+    </a>
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/Baebriel">
+      <img src="github_icon_20px.png" style="width: 20px; height: 20px">
+    </a>
+    <!--  <a target="_blank" rel="noopener noreferrer" href="https://github.com/Baebriel/GPAViz">Source code</a>-->
+  </p>
+
+<!-- add privacy policy -->
+  <div id="privacy-policy">
+    <a href="https://www.iubenda.com/privacy-policy/92202706" class="iubenda-white iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+  </div>
+
+    <!-- add copyright -->
+    <small>
+      &copy;
+      <span id="copyright">
+        <script>document.getElementById('copyright').appendChild(document.createTextNode((new Date().getFullYear()).toString()))</script>
+    </span>
+      Gabriel Aaron
+    </small>
+
+
 </footer>
 
 </body>

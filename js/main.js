@@ -321,6 +321,14 @@ const LINE_HL_COLOR = "#C96A29";
 // 3. decide what to do about nav bar
 // 4. see if I can add Arial font to graph image download
 
+// copyright year stuff
+// const date = new Date();
+// const year = date.getFullYear();
+//
+// window.onload = () => {
+//   document.getElementById("copyright").textContent = "&copy; Copyright  " + year + " Gabriel Aaron. All Rights Reserved";
+// }
+
 // ================ BEGIN CHART CREATION ========================
 
 // define constants
@@ -680,7 +688,7 @@ fileInput.addEventListener("change", handleFiles, false);
 let file = [];
 
 // name 'Draw chart' button
-let ocrBtn = document.getElementById("img-to-text");
+let ocrBtn = document.getElementById("draw-ocr");
 ocrBtn.setAttribute("disabled","disabled");
 
 function handleFiles() {
