@@ -43,7 +43,7 @@ html *
 
 /* Style the active/current link*/
 .header a.active {
-  background-color: dodgerblue;
+  background-color: #73B0D7;
   color: white;
 }
 
@@ -54,11 +54,10 @@ html *
 
 main {
   width: 1366px;
-  /*height: 768px;*/
   height: auto;
   /*background: #d0d6d1;*/
   margin: auto;
-  padding-bottom: 2.5rem;
+  padding: 2.5rem;
 }
 
 footer {
@@ -232,4 +231,29 @@ input {
 
 #file-input-redirect, #draw-ocr {
   width: 90px;
+}
+
+/* #################### contact page and form ##################### */
+.wrap-contact {
+  border-radius: 5px;
+  background-color: #73B0D7;
+  padding: 20px;
+  width: 700px;
+  height: 355px;
+  margin: auto;
+  /*position: absolute;*/
+  /*top: 50%;*/
+  /*left: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+}
+
+#contact-email, #contact-message, #contact-subject {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }

@@ -40,25 +40,33 @@
 <!-- section containing all main page content, minus footer-->
 <main>
 
-    <!-- contact form -->
+<!-- contact content wrapper -->
+    <div class="wrap-contact">
+        <h2>Bugs? Feedback? Want to work together? Get in touch!</h2>
 
-    <form
-            action="https://formspree.io/f/mqkgwdwr"
-            method="POST"
-    >
-        <label>
-            Your email:
-            <input type="text" name="_replyto">
-        </label>
-        <label>
-            Your message:
-            <textarea name="message"></textarea>
-        </label>
+        <!-- contact form -->
+        <form
+                action="https://formspree.io/f/mqkgwdwr"
+                method="POST"
+        >
+            <label>
+                Email:
+                <input type="text" name="_replyto" id="contact-email" placeholder="Your email..." required>
+            </label>
+            <label>
+                Subject:
+                <input type="text" name="_subject" id="contact-subject" placeholder="Your message subject..." required>
+            </label>
+            <label>
+                Message:
+                <textarea name="message" id="contact-message" placeholder="Your message..." required></textarea>
+            </label>
 
-        <!-- your other form fields go here -->
+            <!-- your other form fields go here -->
 
-        <button type="submit">Send</button>
-    </form>
+            <button type="submit" id="contact-send">Send</button>
+        </form>
+    </div>
 
 </main>
 
