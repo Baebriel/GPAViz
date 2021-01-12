@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Changed index.html and contact.html styling.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Fixed regex for new input format.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/filepond.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,14 +103,7 @@
       <workItem from="1609459180165" duration="73000" />
       <workItem from="1609698414513" duration="9618000" />
       <workItem from="1610057601401" duration="1499000" />
-      <workItem from="1610300500353" duration="17164000" />
-    </task>
-    <task id="LOCAL-00013" summary="Fixed line transition.">
-      <created>1609196155218</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1609196155218</updated>
+      <workItem from="1610300500353" duration="19171000" />
     </task>
     <task id="LOCAL-00014" summary="Fixed line appearing behind bars.">
       <created>1609196298396</created>
@@ -451,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610383585627</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Fixed regex for new input format.">
+      <created>1610478135460</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1610478135460</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +478,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added note for OCR screenshot." />
     <MESSAGE value="Spelling." />
     <MESSAGE value="Changed location of note and added tip for mouseover tooltips." />
     <MESSAGE value="Added padding for tip." />
@@ -506,7 +502,8 @@
     <MESSAGE value="Changed styling." />
     <MESSAGE value="Added contact.html and contact form." />
     <MESSAGE value="Changed index.html and contact.html styling." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed index.html and contact.html styling." />
+    <MESSAGE value="Fixed regex for new input format." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed regex for new input format." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
