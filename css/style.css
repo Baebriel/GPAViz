@@ -121,7 +121,7 @@ div#upload {
   float: left;
   /*background-color: #ABEBFF;*/
   padding: 5px 5px 5px 15px;
-  width: 650px;
+  width: 660px;
 }
 
 th, td {
@@ -135,7 +135,6 @@ th, td {
 
 /* #################### graph stuff ##################### */
 .line {
-  stroke: red;
   fill: none;
   stroke-width: 3;
 }
