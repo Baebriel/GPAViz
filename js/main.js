@@ -335,6 +335,7 @@ const tool_tip = d3.tip()
         }
       })
       tip_text += "</table>";
+      tip_text += "<p style='text-align: center'>" + d.gpa + "</p>";
       return tip_text;
     })
 
@@ -490,72 +491,23 @@ chart.selectAll(".point")
       cum_tip.hide(d)
     })
 
-
-
 // ================ END CHART CREATION ========================
 
-// add course
-$(".add").on("click", function() {
-  const count = document.getElementById("myForm").childElementCount;
-  if (count > 100) {
-    alert('Cannot have more than 100 courses.')
-  } else {
-    const clone = $("form > p:first-child").clone(true);
-    clone.find('input').val('');
-    clone.insertBefore("form > p:last-child");
-    return false;
-  }
-});
+$("#draw-chart").on("click", function () {
+  drawHandler();
+})
 
-// remove course
-$(".remove").on("click",function() {
-  const count = document.getElementById("myForm").childElementCount;
-  if (count > 2) {
-    $(this).parent().fadeOut(200, function() {$(this).remove()});
-  } else {
-    alert('Cannot have less than one course.')
-  }
-});
+function drawHandler() {
+  const input = document.getElementById("dars-input").value;
+  console.log(input);
 
-// draw chart from scratch
-$( ".draw" ).on("click", function() {
-  drawHandler(false);
-});
+  const courses = parseInput(input);
+  console.log(courses);
 
-// append data to graph
-$(".append").on("click", function() {
-  drawHandler(true)
-});
+  const semesters_ordered = coursesToOrderedSemesters(courses);
+  console.log(semesters_ordered);
 
-// get and parse form data
-function drawHandler(append) {
-  // parse form data into JS object of same structure as data object
-  const formData = $( '#myForm' ).serializeArray();
-  const numFields = 4;
-  const newData = [];
-
-  for (let i = 0; i < formData.length - 3; i+=numFields) {
-    const newObject = {};
-
-    newObject[formData[i]['name']] = formData[i]['value'];
-    newObject[formData[i + 1]['name']] = formData[i + 1]['value'];
-    newObject[formData[i + 2]['name']] = formData[i + 2]['value'];
-    newObject[formData[i + 3]['name']] = formData[i + 3]['value'];
-
-    newData.push(newObject);
-  }
-
-  if (append) {
-    newData.forEach(course => DATA.push(course));
-  } else {
-    DATA = newData;
-  }
-  console.log(newData);
-
-  // call function to format data into courses grouped by semester to plot
-  const semesters_ordered = coursesToOrderedSemesters(DATA);
-
-  // update chart
+  DATA = courses;
   update(semesters_ordered);
 }
 
@@ -660,114 +612,7 @@ function update(data) {
       .remove()
 }
 
-/*
-// filepond stuff for file upload. not used as of now.
-const inputElement = document.querySelector('input[type="file"]');
-const pond = FilePond.create( inputElement );
-const file = pond.getFiles;
-
- */
-
-// begin OCR stuff
-//https://ourcodeworld.com/articles/read/580/how-to-convert-images-to-text-with-pure-javascript-using-tesseract-js
-
-// get file upon upload
-const fileInput = document.getElementById("file-input");
-fileInput.addEventListener("change", handleFiles, false);
-let file = [];
-
-// name 'Draw chart' button
-let ocrBtn = document.getElementById("draw-ocr");
-ocrBtn.setAttribute("disabled","disabled");
-
-function handleFiles() {
-  // get file
-  const fileList = this.files;
-  file = fileList[0];
-  console.log('file size: ' + file.size + ' bytes');
-
-  //print file name
-  document.getElementById("file-name-value").textContent = file.name;
-
-  // when file is uploaded, enable 'Draw chart' button
-  ocrBtn.removeAttribute("disabled");
-}
-
-// img to text upon button click
-ocrBtn.addEventListener("click", imgToText, false);
-
-function imgToText(){
-
-  // Disable button until the text recognition finishes
-  ocrBtn.setAttribute("disabled","disabled");
-  ocrBtn.innerText = "Loading..."
-
-  // start progress bar
-  $('#progress-bar').show();
-
-  // create asynchronous Tesseract worker
-  const worker = Tesseract.createWorker({
-    logger: m => {
-      // update progress text
-      document.getElementById("progress-value").textContent = m.status;
-      if ('progress' in m) {
-        // update progress bar
-        document.getElementById("progress-bar").value = Math.floor(parseFloat(m.progress) * 100);
-      }
-    }});
-
-  // enable Tesseract logging
-  Tesseract.setLogging(true);
-
-  // start async function
-  work()
-      .then(result => {
-        // parse courses from text result
-        const courses = parseOCR(result.data.text, false);
-
-        console.log(courses);
-
-        // group courses into ordered semesters
-        const semesters_ordered = coursesToOrderedSemesters(courses);
-
-        DATA = courses;
-
-        // update chart
-        update(semesters_ordered);
-
-      })
-      .catch(error => {
-        console.log(error);
-        alert('error during text recognition');
-      })
-
-      .finally(function(){
-        // once async function is done, reset button text, file name text and progress text
-        ocrBtn.innerText = "Draw chart";
-        document.getElementById("file-name-value").textContent = "";
-        document.getElementById("progress-value").textContent = "";
-        document.getElementById("file-input").value = "";
-
-        // also hide progress bar
-        $('#progress-bar').hide();
-      });
-
-  async function work() {
-    await worker.load();
-    await worker.loadLanguage('eng');
-    await worker.initialize('eng');
-
-    let result = await worker.detect(file);
-    //console.log(result.data);
-
-    result = await worker.recognize(file);
-    //console.log(result.data);
-
-    await worker.terminate();
-    return result;
-  }
-}
-
+// download svg as png
 $("#download").on('click', function(){
   // Get the SVG element and save using saveSvgAsPng.js
   saveSvgAsPng(document.getElementsByTagName("svg")[0], "GPAViz.png", {
@@ -776,88 +621,11 @@ $("#download").on('click', function(){
   });
 })
 
-/**
- * Parse data from OCR
- * @param textResult: result.data.text from tesseract
- * @param testingFlag: if true, textResult is redefined to be a prescribed string
- */
-function parseOCR(textResult, testingFlag) {
-
-  if (testingFlag) {
-    console.log('testing regex using predefined text');
-    textResult = "FA17 AE 100 A 20 A\n" +
-        "\n" +
-        "FA17 AE 199 CD2 20 A >R\n" +
-        "FA17 AVI 101 30 TR PARKLAND: AVI 101\n" +
-        "FA17 BADM 1--7 3.0 PS\n" +
-        "FA17 CHEM 102 GL1 3.0 C+\n" +
-        "FA17 CHEM 103 S52 1.0 B+\n" +
-        "FA17 ENG 100 AE2 00 s\n" +
-        "\n" +
-        "FA17 ENGL 1--4 30 PS\n" +
-        "FA17 FR2--5 20 PS\n" +
-        "FA17 GEOG 1018 30 PS\n" +
-        "FA17 MATH 220 1 50 PS\n" +
-        "FA17 MATH 231 EL1 3.0 B\n" +
-        "\n" +
-        "FA17  MATH 299 EL1 10 B\n" +
-        "\n" +
-        "FA17 RHET 1--3 30 PS\n" +
-        "FA17 RHET 1051 40 PS\n" +
-        "SP18 AE 199 SDM 1.0 A+ >R\n" +
-        "SP18  AvI 120 30 TR PARKLAND: AVI 120\n" +
-        "SP18 MATH 241 BL2 40 B+\n" +
-        "SP18 PHYS 211 A3 40 A-\n" +
-        "SP18 SPAN 122 D1 40 C+\n" +
-        "FA18 AVI 130 30 TR PARKLAND: AVI 129\n" +
-        "FA18 MATH 285 D1 30 B\n" +
-        "\n" +
-        "FA18 MSE 280 A 30 B\n" +
-        "\n" +
-        "FA18 PHYS 212 A2 40 C-\n" +
-        "FA18 TAM 210 AL2 20 C+\n" +
-        "WI19 ECON 102 ONL 30 B\n" +
-        "SP19 AE 202A 30 A\n" +
-        "SP19 LAS 291 SAK 00 s\n" +
-        "SP19 MATH 415 AL4 3.0 D+\n" +
-        "SP19  ME 200 AL2 3.0 B+\n" +
-        "SP19 TAM 212 AE2 30 B\n" +
-        "\n" +
-        "FA19 AE311A 30 A\n" +
-        "\n" +
-        "FA19 AE321A 30 B-\n" +
-        "FA19 AE 353A 30 A\n" +
-        "\n" +
-        "FA19 IE 300 BL1 30 A\n" +
-        "\n" +
-        "FA19 JS212A1 3.0 B+\n" +
-        "SP20 AE312A 30 CR\n" +
-        "SP20 AE323A 30 CR\n" +
-        "SP20 AE 352 BL 30 CR\n" +
-        "SP20 AE370A 30 CR\n" +
-        "SP20 ECE 205AL1 30 CR\n" +
-        "SU20 AE 402 A0 3.0 B+\n" +
-        "SU20 ECE 206 A1 101 B\n" +
-        "\n" +
-        "FA20 AE433A 3.0 B+\n" +
-        "FA20 AE 442A1 30 B\n" +
-        "\n" +
-        "FA20 AE 460 AE1 20 A\n" +
-        "\n" +
-        "FA20 AE 483 AE1 20 A\n" +
-        "\n" +
-        "FA20 CS 125AL1 40 A\n" +
-        "FA20 CS 196 25 1.0 A+\n" +
-        "SP21  AE 443 A1 30 IP >l\n" +
-        "SP21 AE 461 AS1 20 P >l\n" +
-        "SP21 AE484A 30 IP >l\n" +
-        "SP21 FAA102A 30 IP >l"
-  }
-
+function parseInput(textResult) {
   const lines = textResult.split('\n');
 
-  // https://regex101.com/r/LM2l3f/1/
-  const pattern = /(?<semester>^[A-Z]{2,3}[0-9]{2}) *(?<course>[A-Z]{2,4} *[0-9\-]{3}).*(?<hours>[0-9][.]?[0-9]{1,2}) (?<grade>[ABCDF][+-]?)($| *>R)/;
+  // https://regex101.com/r/LM2l3f/2
+  const pattern = /^(?<semester>[A-Z]{2}[0-9]{2})\t(?<department>[A-Z]{2,4}) (?<number>[0-9\-]*).*(?<hours>[0-9][.][0-9])\t(?<grade>[ABCDF]([+|-]|\t))/;
 
   // define course object array
   const courses = [];
@@ -873,27 +641,17 @@ function parseOCR(textResult, testingFlag) {
     if (match != null) {
       // add object properties
       courseObj['semester'] = match.groups.semester;
-      courseObj['course'] = match.groups.course;
-
-      // OCR may not detect decimal in hours number, so parse accordingly
-      let hours = parseFloat(match.groups.hours);
-      if (hours > 5 && hours < 50) {
-        hours /= 10;
-      } else if (hours > 50) {
-        hours /= 100;
-      }
-
-      // add object properties
-      courseObj['hours'] = hours;
-      courseObj['grade'] = match.groups.grade;
+      courseObj['course'] = match.groups.department + ' ' + match.groups.number;
+      courseObj['hours'] = parseFloat(match.groups.hours);
+      courseObj['grade'] = match.groups.grade.trim();
 
       // push new course object to course object array
       courses.push(courseObj);
     }
   }
-  console.log(courses);
   return courses;
 }
+
 
 /**
  * This function takes an array of course objects and returns an array of semesters containing all courses.

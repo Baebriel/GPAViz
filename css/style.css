@@ -88,54 +88,39 @@ footer {
   margin: 10px auto;
 }
 
-a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
-}
-
 /* #################### smaller sections ##################### */
 div#chart-container {
   width: 1000px;
-  height: auto;
-  margin: auto;
-  background-color: #EEEEEE;
-}
-
-div#input-and-upload {
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  /*background-color: #4f4f4f;*/
-}
-
-div#manual {
-  text-align: left;
-  /*background: rosybrown;*/
+  /*height: auto;*/
+  /*margin: auto;*/
   float: left;
-  padding: 5px;
-  /*width: 600px;*/
-  border-right: 2px solid black;
+  /*background-color: #EEEEEE;*/
 }
 
-div#upload {
-  left: 50%;
+div#input-wrap {
   float: left;
-  /*background-color: #ABEBFF;*/
-  padding: 5px 5px 5px 15px;
-  width: 650px;
+  width: 300px;
+  height: 696px;
+  padding: 0 10px;
+  margin-right: 10px;
+  /*background-color: #c44e47;*/
 }
 
-th, td {
-  padding: 3px 3px 3px 0;
-  text-align: left;
+textarea#dars-input {
+  width: 290px;
+  height: 430px;
 }
 
-#progress-bar {
-  display: none;
+ol {
+  padding-left: 20px;
+}
+
+li {
+  padding-bottom: 10px;
 }
 
 /* #################### graph stuff ##################### */
 .line {
-  stroke: red;
   fill: none;
   stroke-width: 3;
 }
@@ -187,50 +172,24 @@ svg {
   }
 }
 
-@media (max-width: 1366px) {
-  div#upload {
-    display:block;
-    /*width:650px;*/
-    float:none;
-  }
-  div#manual {
-    border: none;
-    float: none;
-  }
-}
-
-/* #################### buttons and inputs ##################### */
-.draw, .append {
-  margin: 5px;
-}
-
-.add {
-  margin: 5px 5px 5px 0;
-}
+/* #################### buttons, inputs and links ##################### */
 
 #download {
   float: left;
   margin: 5px;
 }
 
-input {
-  width: 10%;
+#draw-chart {
+  float: left;
+  margin: 5px;
 }
 
-.remove {
-  margin-left: 10px;
-}
+a#dars-link {color:blue;}         /* Unvisited link  */
+a#dars-link:visited {color:blue;} /* Visited link    */
+a#dars-link:hover {color:#FF00FF;}   /* Mouse over link */
 
-#file-input-redirect, #file-name-label {
-  display: inline-block;
-}
-
-#draw-ocr, #progress-label {
-  display: inline-block;
-}
-
-#file-input-redirect, #draw-ocr {
-  width: 90px;
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
 }
 
 /* #################### contact page and form ##################### */

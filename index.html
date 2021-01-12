@@ -43,85 +43,20 @@
 <!-- section containing all main page content, minus footer-->
 <main>
 
-  <!-- manual and OCR course input sections -->
-  <div id="input-and-upload">
-    <!-- course inputs -->
-    <div id='manual'>
-      <h4>Please manually enter your courses...</h4>
-      <form id='myForm'>
-        <p>
-          <label for="semester">Semester:</label> <select name="semester" id="semester">
-          <option value="FA17">Fall 2017</option>
-          <option value="WI18">Winter 2017/2018</option>
-          <option value="SP18">Spring 2018</option>
-          <option value="SU18">Summer 2018</option>
-          <option value="FA18">Fall 2018</option>
-          <option value="WI19">Winter 2018/2019</option>
-          <option value="SP19">Spring 2019</option>
-          <option value="SU19">Summer 2019</option>
-          <option value="FA19">Fall 2019</option>
-          <option value="WI20">Winter 2019/2020</option>
-          <option value="SP20">Spring 2020</option>
-          <option value="SU20">Summer 2020</option>
-          <option value="FA20">Fall 2020</option>
-        </select>
-          <label for="input">Course:</label> <input type="text" name="course" id="input">
-          <label for="hours">Hours:</label> <select name="hours" id='hours'>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-          <label for="grade">Grade:</label> <select name="grade" id="grade">
-          <option value="A+">A+</option>
-          <option value="A">A</option>
-          <option value="A-">A-</option>
-          <option value="B+">B+</option>
-          <option value="B">B</option>
-          <option value="B-">B-</option>
-          <option value="C+">C+</option>
-          <option value="C">C</option>
-          <option value="C-">C-</option>
-          <option value="D+">D+</option>
-          <option value="D">D</option>
-          <option value="D-">D-</option>
-          <option value="F">F</option>
-        </select>
-          <button class="remove" type='button'>&#x2715</button>
-        </p>
-        <p>
-          <button class="add" type='button'>Add input</button>
-          <button class="draw" type='button'>Draw chart</button>
-          <button class="append" type="button">Add to existing graph</button>
-        </p>
-      </form>
-    </div>
-
-    <!-- include tesseract -->
-    <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
-    <div id="upload">
-      <h4>...or, upload a screenshot of the 'summary of courses taken' in your UIUC DARS report</h4>
-      <table>
-        <tr>
-          <td><button id="file-input-redirect" onclick="document.getElementById('file-input').click()">Choose file</button></td>
-          <input type="file" id="file-input" style="display: none"> <!-- hidden file input button -->
-          <td><div id="file-name-label">File name:</div></td>
-          <td><div id="file-name-value"></div></td>
-        </tr>
-
-        <tr>
-          <td><button id="draw-ocr">Draw chart</button></td>
-          <td><div id="progress-label">Progress: </div></td>
-          <td style="width: 250px"><div id="progress-value"></div></td>
-          <td><progress id="progress-bar" value="32" max="100"></progress></td>
-        </tr>
-
-      </table>
-      <p style="padding: 5px; font-size: 10pt">Note: if some courses are not detected, make sure to tightly crop your screenshot.
-        If that still doesn't work, you can input the missing ones manually and hit the "Add to existing graph" button on the left.</p>
-    </div>
+  <!-- course input wrapper -->
+  <div id="input-wrap">
+    <b>Instructions:</b>
+    <ol>
+      <li>Generate a degree audit through the <a href="https://uachieve.apps.uillinois.edu/uachieve_uiuc/audit/create.html" id="dars-link" target="_blank" rel="noopener noreferrer">Degree Audit System</a></li>
+      <li>Scroll down to the "SUMMARY OF COURSES TAKEN" section</li>
+      <li>Copy all text in the shaded area and paste it in the box below</li>
+      <li>Click on "Draw chart" and enjoy</li>
+    </ol>
+    <!-- manual course input -->
+    <textarea id="dars-input" placeholder="Enter your course data here..."></textarea>
+    <br>
+    <button id="draw-chart">Draw chart</button>
   </div>
-
 
   <!-- chart, tip and download button -->
   <div id='chart-container'>

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Added contact.html and contact form.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Changed styling of index.html.">
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev/tooltip" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,35 +102,7 @@
       <workItem from="1609459180165" duration="73000" />
       <workItem from="1609698414513" duration="9618000" />
       <workItem from="1610057601401" duration="1499000" />
-      <workItem from="1610300500353" duration="9428000" />
-    </task>
-    <task id="LOCAL-00012" summary="Fixed bars being added to wrong element and therefore being placed too high.">
-      <created>1609176632059</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1609176632059</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Fixed line transition.">
-      <created>1609196155218</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1609196155218</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Fixed line appearing behind bars.">
-      <created>1609196298396</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1609196298396</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Replaced deprecated click event listeners.">
-      <created>1609196873535</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1609196873535</updated>
+      <workItem from="1610300500353" duration="22003000" />
     </task>
     <task id="LOCAL-00016" summary="Replaced deprecated click event listeners v2.">
       <created>1609196920555</created>
@@ -449,7 +419,35 @@
       <option name="project" value="LOCAL" />
       <updated>1610304471810</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Changed index.html and contact.html styling.">
+      <created>1610383585627</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1610383585627</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Fixed regex for new input format.">
+      <created>1610478135460</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1610478135460</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Refactored code, fixed regex again and added semester gpa tooltip.">
+      <created>1610490308235</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1610490308235</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Changed styling of index.html.">
+      <created>1610493030130</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1610493030130</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,10 +477,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Made small changes." />
-    <MESSAGE value="Added note for OCR screenshot." />
-    <MESSAGE value="Spelling." />
-    <MESSAGE value="Changed location of note and added tip for mouseover tooltips." />
     <MESSAGE value="Added padding for tip." />
     <MESSAGE value="Edited course tooltip format for placeholder data." />
     <MESSAGE value="Removed bootstrap and made stylistic changes." />
@@ -504,7 +498,11 @@
     <MESSAGE value="Added footer content." />
     <MESSAGE value="Changed styling." />
     <MESSAGE value="Added contact.html and contact form." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added contact.html and contact form." />
+    <MESSAGE value="Changed index.html and contact.html styling." />
+    <MESSAGE value="Fixed regex for new input format." />
+    <MESSAGE value="Refactored code, fixed regex again and added semester gpa tooltip." />
+    <MESSAGE value="Changed styling of index.html." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed styling of index.html." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
