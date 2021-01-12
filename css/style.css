@@ -88,10 +88,6 @@ footer {
   margin: 10px auto;
 }
 
-a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
-}
-
 /* #################### smaller sections ##################### */
 div#chart-container {
   width: 1000px;
@@ -191,6 +187,10 @@ svg {
 a#dars-link {color:blue;}         /* Unvisited link  */
 a#dars-link:visited {color:blue;} /* Visited link    */
 a#dars-link:hover {color:#FF00FF;}   /* Mouse over link */
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
 
 /* #################### contact page and form ##################### */
 .wrap-contact {
