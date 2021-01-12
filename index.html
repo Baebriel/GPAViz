@@ -43,9 +43,20 @@
 <!-- section containing all main page content, minus footer-->
 <main>
 
-  <!-- manual course input -->
-  <textarea id="dars-input"></textarea>
-  <button id="draw-chart">Draw chart</button>
+  <!-- course input wrapper -->
+  <div id="input-wrap">
+    <b>Instructions:</b>
+    <ol>
+      <li>Generate a degree audit through the <a href="https://uachieve.apps.uillinois.edu/uachieve_uiuc/audit/create.html" id="dars-link" target="_blank" rel="noopener noreferrer">Degree Audit System</a></li>
+      <li>Scroll down to the "SUMMARY OF COURSES TAKEN" section</li>
+      <li>Copy all text in the shaded area and paste it in the box below</li>
+      <li>Click on "Draw chart" and enjoy</li>
+    </ol>
+    <!-- manual course input -->
+    <textarea id="dars-input" placeholder="Enter your course data here..."></textarea>
+    <br>
+    <button id="draw-chart">Draw chart</button>
+  </div>
 
   <!-- chart, tip and download button -->
   <div id='chart-container'>
