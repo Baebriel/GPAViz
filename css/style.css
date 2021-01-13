@@ -74,6 +74,19 @@ footer {
   padding: 0 0 10px 0;
 }
 
+.fixed-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #F1F1F1;
+  display: inline-block;
+  text-align: center;
+  horiz-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 10px 0;
+}
+
 #footer-links {
   text-align: center;
   /*background-color: #c44e47;*/

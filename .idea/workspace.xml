@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Changed styling of index.html v2.">
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Refactored project files and removed remnants of OCR.">
+      <change afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/filepond.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon_io/android-chrome-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/favicon_io/android-chrome-192x192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon_io/android-chrome-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/favicon_io/android-chrome-512x512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon_io/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/favicon_io/apple-touch-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon_io/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/favicon_io/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon_io/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/favicon_io/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon_io/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/assets/favicon_io/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon_io/site.webmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/assets/favicon_io/site.webmanifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github_icon_20px.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/github_icon_20px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/tesseract.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/langs-folder/eng.traineddata.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linkedin_icon_20px.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/linkedin_icon_20px.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,14 +107,7 @@
       <workItem from="1609698414513" duration="9618000" />
       <workItem from="1610057601401" duration="1499000" />
       <workItem from="1610300500353" duration="22003000" />
-      <workItem from="1610495785817" duration="214000" />
-    </task>
-    <task id="LOCAL-00016" summary="Replaced deprecated click event listeners v2.">
-      <created>1609196920555</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1609196920555</updated>
+      <workItem from="1610495785817" duration="1260000" />
     </task>
     <task id="LOCAL-00017" summary="Started implementing OCR.">
       <created>1609246949252</created>
@@ -465,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610493030130</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Refactored project files and removed remnants of OCR.">
+      <created>1610496040865</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1610496040865</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +482,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added padding for tip." />
     <MESSAGE value="Edited course tooltip format for placeholder data." />
     <MESSAGE value="Removed bootstrap and made stylistic changes." />
     <MESSAGE value="Restyled page and tried adding custom font to svg download." />
@@ -520,7 +506,8 @@
     <MESSAGE value="Fixed regex for new input format." />
     <MESSAGE value="Refactored code, fixed regex again and added semester gpa tooltip." />
     <MESSAGE value="Changed styling of index.html." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed styling of index.html." />
+    <MESSAGE value="Refactored project files and removed remnants of OCR." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored project files and removed remnants of OCR." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
