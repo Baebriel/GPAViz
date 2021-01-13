@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Refactored project files and removed remnants of OCR.">
-      <change afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+    <list default="true" id="588b4c37-33b9-4a1f-b9ca-f9040335ec9c" name="Default Changelist" comment="Created 'about' page and added fixed footer to about.html and contact.html.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,14 +104,7 @@
       <workItem from="1609698414513" duration="9618000" />
       <workItem from="1610057601401" duration="1499000" />
       <workItem from="1610300500353" duration="22003000" />
-      <workItem from="1610495785817" duration="1260000" />
-    </task>
-    <task id="LOCAL-00017" summary="Started implementing OCR.">
-      <created>1609246949252</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1609246949252</updated>
+      <workItem from="1610495785817" duration="2965000" />
     </task>
     <task id="LOCAL-00018" summary="Moved index.html for Github Pages hosting.">
       <created>1609247567240</created>
@@ -452,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610496040865</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Created 'about' page and added fixed footer to about.html and contact.html.">
+      <created>1610498567499</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1610498567499</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +479,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Edited course tooltip format for placeholder data." />
     <MESSAGE value="Removed bootstrap and made stylistic changes." />
     <MESSAGE value="Restyled page and tried adding custom font to svg download." />
     <MESSAGE value="Changed styling and added 100 course cap." />
@@ -507,7 +503,8 @@
     <MESSAGE value="Refactored code, fixed regex again and added semester gpa tooltip." />
     <MESSAGE value="Changed styling of index.html." />
     <MESSAGE value="Refactored project files and removed remnants of OCR." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored project files and removed remnants of OCR." />
+    <MESSAGE value="Created 'about' page and added fixed footer to about.html and contact.html." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created 'about' page and added fixed footer to about.html and contact.html." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

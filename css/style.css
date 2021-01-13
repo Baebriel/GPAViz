@@ -54,10 +54,12 @@ html *
 
 main {
   width: 1366px;
-  height: auto;
+  /*height: content-box;*/
   /*background: #d0d6d1;*/
   margin: auto;
   padding: 2.5rem;
+  display: block;
+  overflow: auto;
 }
 
 footer {
@@ -104,13 +106,15 @@ footer {
 /* #################### smaller sections ##################### */
 div#chart-container {
   width: 1000px;
-  /*height: auto;*/
+  height: 696px;
   /*margin: auto;*/
   float: left;
   /*background-color: #EEEEEE;*/
+  position: relative;
 }
 
 div#input-wrap {
+  position: relative;
   float: left;
   width: 300px;
   height: 696px;
@@ -141,6 +145,8 @@ li {
 svg {
   width: 100%;
   height: 600px;
+  background-color: #F1F1F1;
+  border-radius: 7px;
 }
 
 /* #################### tooltip html divs ##################### */
@@ -187,14 +193,10 @@ svg {
 
 /* #################### buttons, inputs and links ##################### */
 
-#download {
-  float: left;
+#download, #draw-chart {
   margin: 5px;
-}
-
-#draw-chart {
-  float: left;
-  margin: 5px;
+  position: absolute;
+  bottom: 0;
 }
 
 a#dars-link {color:blue;}         /* Unvisited link  */
